@@ -17,7 +17,15 @@ namespace Conexion
             retor = coman.ExecuteNonQuery();
             return retor;
         }
-
+        /*
+        public static int agregarPago(MySqlConnection conexion, Ventas cl)
+        {
+            int retor = 0;
+            string sql1 = string.Format("INSERT INTO brproyecto.Saldo (idNumeroPago,Operacion_idOperacion,saldoPagado,saldoPendiente,Mora,cuotasPendiente,fechaPago) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}'); ", cl.pago, cl.Id,  cl.prima,cl.Total, cl.mora, cl.Cuotas, cl.Fecha);
+            MySqlCommand coman = new MySqlCommand(sql1, conexion);
+            retor = coman.ExecuteNonQuery();
+            return retor;
+        }*/
         public static int modificarVenta(MySqlConnection conexion, Ventas cli)
         {
             int retorno1 = 0;

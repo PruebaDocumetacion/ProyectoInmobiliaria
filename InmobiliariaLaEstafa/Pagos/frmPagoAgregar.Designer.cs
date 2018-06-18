@@ -28,22 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtmora = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textAbono = new System.Windows.Forms.TextBox();
             this.txtTipo = new System.Windows.Forms.TextBox();
             this.tDireccion = new System.Windows.Forms.TextBox();
             this.txtCliente = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPendiente = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtAcumullada = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,28 +60,30 @@
             this.button8 = new System.Windows.Forms.Button();
             this.btnCancela = new System.Windows.Forms.Button();
             this.btnCobrer = new System.Windows.Forms.Button();
+            this.dgPago = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPago)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox11);
+            this.groupBox1.Controls.Add(this.txtmora);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.textAbono);
             this.groupBox1.Controls.Add(this.txtTipo);
             this.groupBox1.Controls.Add(this.tDireccion);
             this.groupBox1.Controls.Add(this.txtCliente);
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtPendiente);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtAcumullada);
             this.groupBox1.Controls.Add(this.label3);
@@ -106,13 +111,13 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(103, 22);
             this.dateTimePicker1.TabIndex = 45;
             // 
-            // textBox11
+            // txtmora
             // 
-            this.textBox11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(500, 192);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(83, 25);
-            this.textBox11.TabIndex = 44;
+            this.txtmora.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmora.Location = new System.Drawing.Point(500, 192);
+            this.txtmora.Name = "txtmora";
+            this.txtmora.Size = new System.Drawing.Size(83, 25);
+            this.txtmora.TabIndex = 44;
             // 
             // label12
             // 
@@ -156,21 +161,22 @@
             this.txtCliente.Size = new System.Drawing.Size(155, 25);
             this.txtCliente.TabIndex = 37;
             // 
-            // button5
+            // btnBuscar
             // 
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
-            this.button5.FlatAppearance.BorderSize = 4;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button5.Location = new System.Drawing.Point(266, 24);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(83, 33);
-            this.button5.TabIndex = 36;
-            this.button5.Text = "Buscar";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.btnBuscar.FlatAppearance.BorderSize = 4;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(266, 24);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(83, 33);
+            this.btnBuscar.TabIndex = 36;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.button5_Click);
             // 
             // label10
             // 
@@ -228,13 +234,13 @@
             this.label6.TabIndex = 26;
             this.label6.Text = "Número de Pago :";
             // 
-            // textBox4
+            // txtPendiente
             // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(414, 114);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(155, 25);
-            this.textBox4.TabIndex = 25;
+            this.txtPendiente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPendiente.Location = new System.Drawing.Point(414, 114);
+            this.txtPendiente.Name = "txtPendiente";
+            this.txtPendiente.Size = new System.Drawing.Size(155, 25);
+            this.txtPendiente.TabIndex = 25;
             // 
             // label5
             // 
@@ -335,6 +341,7 @@
             this.btnGenerar.Text = "Generar Factura";
             this.btnGenerar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // button8
             // 
@@ -377,22 +384,54 @@
             this.btnCobrer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCobrer.UseVisualStyleBackColor = true;
             // 
+            // dgPago
+            // 
+            this.dgPago.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgPago.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPago.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgPago.ColumnHeadersHeight = 29;
+            this.dgPago.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dgPago.Location = new System.Drawing.Point(12, 341);
+            this.dgPago.Name = "dgPago";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPago.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
+            this.dgPago.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgPago.Size = new System.Drawing.Size(796, 113);
+            this.dgPago.TabIndex = 42;
+            // 
             // frmPagoAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 338);
+            this.ClientSize = new System.Drawing.Size(828, 478);
+            this.Controls.Add(this.dgPago);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.btnCancela);
             this.Controls.Add(this.btnCobrer);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmPagoAgregar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPagoAgregar";
             this.Load += new System.EventHandler(this.frmPagoAgregar_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPago)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -406,7 +445,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPendiente;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtAcumullada;
         private System.Windows.Forms.Label label3;
@@ -416,8 +455,8 @@
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtmora;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textAbono;
         private System.Windows.Forms.TextBox txtTipo;
@@ -428,5 +467,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btnCancela;
         private System.Windows.Forms.Button btnCobrer;
+        private System.Windows.Forms.DataGridView dgPago;
     }
 }

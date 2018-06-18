@@ -18,31 +18,7 @@ namespace Conexion.Venta
             InitializeComponent();
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmVentasAgregar_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -199,6 +175,35 @@ namespace Conexion.Venta
                 
             }
         }
+
+        public void Pag()
+        {
+            Conexion conectar = new Conexion();
+            conectar.abrirconexion();
+            Pago pInmue1 = new Pago();
+            pInmue1.Id = "1";
+            pInmue1.Operacion = txtIdContrato.Text.Trim();
+            pInmue1.Pagado = Convert.ToDouble(txtPrima.Text);
+            pInmue1.Pagado = Convert.ToDouble(Convert.ToDouble(txtTotal.Text) - Convert.ToDouble(txtPrima.Text));
+            pInmue1.Mora = Convert.ToDouble("0");
+            pInmue1.CuotasP = Convert.ToInt16(txtCuotas.Text);
+            pInmue1.Fecha = dtpFechaCotrato.Value.Day + "/" + dtpFechaCotrato.Value.Month + "/" + dtpFechaCotrato.Value.Year;
+
+
+
+            int resultado1 = operaPagos.agregarPago(conectar.con, pInmue1);
+
+
+            if (resultado1 > 0)
+            {
+                MessageBox.Show("se registrado el primer pago Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo registrar el pagos", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            conectar.cerrarconexion();
+        } 
         private void cbForma_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -222,19 +227,23 @@ namespace Conexion.Venta
             pInmue.Cuotas = Convert.ToInt16(txtCuotas.Text);
             pInmue.prima = Convert.ToDouble(txtPrima.Text);
             pInmue.Descuento = Convert.ToDouble(txtDescuento.Text);
-            pInmue.Total = Convert.ToInt32(txtTotal.Text);
+            pInmue.Total = Convert.ToDouble(txtTotal.Text);
             
 
             int resultado = operaVenta.agregarVenta(conectar.con, pInmue);
+           
             if (resultado > 0)
             {
-                MessageBox.Show("Inmueble Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Contrato Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Pag();
+              
             }
             else
             {
                 MessageBox.Show("No se pudo guardar el Inmueble", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             conectar.cerrarconexion();
+          
 
             txtIdC.Clear();
             txtIdE.Clear();
@@ -293,6 +302,11 @@ namespace Conexion.Venta
             {
                 txtCuotas.Text = "1";
             }
+        }
+
+        private void txtNombreE_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

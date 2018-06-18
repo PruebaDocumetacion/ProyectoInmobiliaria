@@ -16,40 +16,56 @@ namespace Conexion.Pagos
         {
             InitializeComponent();
         }
-
-        private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void domainUpDown2_SelectedItemChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        public Ventas PagoActual { get; set; }
+        public Ventas Pagoselecionado { get; set; }
+        
 
         private void button8_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void txtDescuento_TextChanged(object sender, EventArgs e)
-        {
+        
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+            Conexion conectar = new Conexion();
+            conectar.abrirconexion();
+            string id2 = Convert.ToString(txtId.Text);
+           
+            Pagoselecionado = operaPagos.BuscarContrato(id2, conectar.con);
+
+            if (Pagoselecionado.Id != null)
+            {
+             //   txtDescripcion.Text = Pagoselecionado.Descripcion;
+                //txtPrecio.Text = Convert.ToString(Pagoselecionado.Precio);
+                txtId.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Pago No Encontrado!!", "Pago", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtId.Clear();
+            }
+            conectar.cerrarconexion();
+            conectar.abrirconexion();
+            //string id1 = Convert.ToString(txtId.Text);
+            dgPago.DataSource = operaPagos.BuscarContrato1(conectar.con);
+            conectar.cerrarconexion();
         }
 
-        private void label11_Click(object sender, EventArgs e)
+        private void btnGenerar_Click(object sender, EventArgs e)
         {
 
         }
 
         private void frmPagoAgregar_Load(object sender, EventArgs e)
         {
-
+            Conexion conectar = new Conexion();
+            conectar.abrirconexion();
+            //string id1 = Convert.ToString(txtId.Text);
+            dgPago.DataSource = operaPagos.BuscarContrato1(conectar.con);
+            conectar.cerrarconexion();
         }
     }
 }

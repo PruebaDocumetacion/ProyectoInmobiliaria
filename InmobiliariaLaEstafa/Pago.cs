@@ -10,9 +10,9 @@ namespace Conexion
     {
         public string Id { get; set; }
         public string Operacion { get; set; }
-        public int Pagado { get; set; }
-        public int Pendiente { get; set; }
-        public int Mora { get; set; }
+        public double Pagado { get; set; }
+        public double Pendiente { get; set; }
+        public double Mora { get; set; }
         public int CuotasP { get; set; }
         public string Fecha { get; set; }
         

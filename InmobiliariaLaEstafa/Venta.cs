@@ -19,8 +19,9 @@ namespace Conexion
         public int Cuotas { get; set; }
         public double prima { get; set; }
         public double Descuento { get; set; }
-        public int Total { get; set; }
+        public double Total { get; set; }
         
+
         public Ventas() { }
 
         public Ventas(string pId, string pFecha, string pObservacion, string pCliente, string pEmpleado, string pPropiedad, string pForma,int pCuotas, double pPrima, double pDescuento,int pTotal)

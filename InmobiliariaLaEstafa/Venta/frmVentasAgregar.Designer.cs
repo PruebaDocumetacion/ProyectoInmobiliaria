@@ -133,7 +133,7 @@
             this.dgInmueble.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgInmueble.Size = new System.Drawing.Size(890, 98);
             this.dgInmueble.TabIndex = 18;
-            this.dgInmueble.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+          
             // 
             // txtDescripcion
             // 
@@ -159,7 +159,7 @@
             this.txtIdInmeble.Location = new System.Drawing.Point(71, 31);
             this.txtIdInmeble.Name = "txtIdInmeble";
             this.txtIdInmeble.Size = new System.Drawing.Size(190, 25);
-            this.txtIdInmeble.TabIndex = 14;
+            this.txtIdInmeble.TabIndex = 7;
             // 
             // btnBuscarInmueble
             // 
@@ -172,7 +172,7 @@
             this.btnBuscarInmueble.Location = new System.Drawing.Point(267, 27);
             this.btnBuscarInmueble.Name = "btnBuscarInmueble";
             this.btnBuscarInmueble.Size = new System.Drawing.Size(83, 33);
-            this.btnBuscarInmueble.TabIndex = 13;
+            this.btnBuscarInmueble.TabIndex = 8;
             this.btnBuscarInmueble.Text = "Buscar";
             this.btnBuscarInmueble.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarInmueble.UseVisualStyleBackColor = true;
@@ -214,7 +214,7 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contrato";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+          
             // 
             // txtDescuento
             // 
@@ -222,7 +222,7 @@
             this.txtDescuento.Location = new System.Drawing.Point(441, 99);
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(159, 25);
-            this.txtDescuento.TabIndex = 44;
+            this.txtDescuento.TabIndex = 14;
             this.txtDescuento.Visible = false;
             // 
             // lbDescuento
@@ -242,7 +242,7 @@
             this.txtCuotas.Location = new System.Drawing.Point(409, 65);
             this.txtCuotas.Name = "txtCuotas";
             this.txtCuotas.Size = new System.Drawing.Size(148, 25);
-            this.txtCuotas.TabIndex = 42;
+            this.txtCuotas.TabIndex = 12;
             this.txtCuotas.TextChanged += new System.EventHandler(this.txtCuotas_TextChanged);
             // 
             // label12
@@ -261,7 +261,7 @@
             this.txtPrima.Location = new System.Drawing.Point(398, 96);
             this.txtPrima.Name = "txtPrima";
             this.txtPrima.Size = new System.Drawing.Size(159, 25);
-            this.txtPrima.TabIndex = 40;
+            this.txtPrima.TabIndex = 13;
             this.txtPrima.Visible = false;
             this.txtPrima.TextChanged += new System.EventHandler(this.txtPrima_TextChanged);
             // 
@@ -283,7 +283,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(159, 25);
             this.txtPrecio.TabIndex = 38;
-            this.txtPrecio.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+          
             // 
             // label4
             // 
@@ -294,7 +294,8 @@
             this.label4.Size = new System.Drawing.Size(58, 18);
             this.label4.TabIndex = 39;
             this.label4.Text = "Por : L.";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+          
+
             // 
             // label3
             // 
@@ -312,7 +313,7 @@
             this.txtObservacion.Location = new System.Drawing.Point(182, 131);
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.Size = new System.Drawing.Size(478, 25);
-            this.txtObservacion.TabIndex = 36;
+            this.txtObservacion.TabIndex = 15;
             // 
             // cbForma
             // 
@@ -323,7 +324,7 @@
             this.cbForma.Location = new System.Drawing.Point(169, 95);
             this.cbForma.Name = "cbForma";
             this.cbForma.Size = new System.Drawing.Size(147, 30);
-            this.cbForma.TabIndex = 20;
+            this.cbForma.TabIndex = 11;
             this.cbForma.SelectedIndexChanged += new System.EventHandler(this.cbForma_SelectedIndexChanged);
             // 
             // label9
@@ -342,7 +343,7 @@
             this.txtIdContrato.Location = new System.Drawing.Point(150, 35);
             this.txtIdContrato.Name = "txtIdContrato";
             this.txtIdContrato.Size = new System.Drawing.Size(159, 25);
-            this.txtIdContrato.TabIndex = 15;
+            this.txtIdContrato.TabIndex = 9;
             // 
             // label5
             // 
@@ -362,7 +363,7 @@
             this.dtpFechaCotrato.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpFechaCotrato.Name = "dtpFechaCotrato";
             this.dtpFechaCotrato.Size = new System.Drawing.Size(193, 22);
-            this.dtpFechaCotrato.TabIndex = 16;
+            this.dtpFechaCotrato.TabIndex = 10;
             // 
             // label10
             // 
@@ -414,7 +415,7 @@
             this.txtNombreC.Location = new System.Drawing.Point(441, 21);
             this.txtNombreC.Name = "txtNombreC";
             this.txtNombreC.Size = new System.Drawing.Size(190, 25);
-            this.txtNombreC.TabIndex = 15;
+            this.txtNombreC.TabIndex = 2;
             // 
             // txtIdC
             // 
@@ -422,7 +423,7 @@
             this.txtIdC.Location = new System.Drawing.Point(119, 21);
             this.txtIdC.Name = "txtIdC";
             this.txtIdC.Size = new System.Drawing.Size(190, 25);
-            this.txtIdC.TabIndex = 14;
+            this.txtIdC.TabIndex = 1;
             // 
             // btnBuscarCliente
             // 
@@ -435,7 +436,7 @@
             this.btnBuscarCliente.Location = new System.Drawing.Point(686, 17);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(83, 33);
-            this.btnBuscarCliente.TabIndex = 13;
+            this.btnBuscarCliente.TabIndex = 3;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
@@ -483,7 +484,8 @@
             this.txtNombreE.Location = new System.Drawing.Point(441, 26);
             this.txtNombreE.Name = "txtNombreE";
             this.txtNombreE.Size = new System.Drawing.Size(190, 25);
-            this.txtNombreE.TabIndex = 15;
+            this.txtNombreE.TabIndex = 5;
+            this.txtNombreE.TextChanged += new System.EventHandler(this.txtNombreE_TextChanged);
             // 
             // txtIdE
             // 
@@ -491,7 +493,7 @@
             this.txtIdE.Location = new System.Drawing.Point(119, 28);
             this.txtIdE.Name = "txtIdE";
             this.txtIdE.Size = new System.Drawing.Size(190, 25);
-            this.txtIdE.TabIndex = 14;
+            this.txtIdE.TabIndex = 4;
             // 
             // btnBuscarEmpleado
             // 
@@ -504,7 +506,7 @@
             this.btnBuscarEmpleado.Location = new System.Drawing.Point(681, 21);
             this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
             this.btnBuscarEmpleado.Size = new System.Drawing.Size(83, 33);
-            this.btnBuscarEmpleado.TabIndex = 13;
+            this.btnBuscarEmpleado.TabIndex = 6;
             this.btnBuscarEmpleado.Text = "Buscar";
             this.btnBuscarEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarEmpleado.UseVisualStyleBackColor = true;
@@ -670,7 +672,7 @@
             this.button9.Location = new System.Drawing.Point(165, 530);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(125, 33);
-            this.button9.TabIndex = 36;
+            this.button9.TabIndex = 16;
             this.button9.Text = "Generar Contrato";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button9.UseVisualStyleBackColor = true;
@@ -692,8 +694,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmVentasAgregar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVentasAgregar";
-            this.Load += new System.EventHandler(this.frmVentasAgregar_Load);
+            
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInmueble)).EndInit();
