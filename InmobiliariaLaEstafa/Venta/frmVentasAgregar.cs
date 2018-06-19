@@ -74,7 +74,7 @@ namespace Conexion.Venta
             }            
             else 
             {
-                txtNombreC.Text = ClienteSelecionado.Nombre;
+                txtNombreC.Text = ClienteSelecionado.NombreC;
                 txtIdC.Enabled = false;
                 txtNombreC.Enabled = false; 
             }
@@ -184,7 +184,7 @@ namespace Conexion.Venta
             pInmue1.Id = "1";
             pInmue1.Operacion = txtIdContrato.Text.Trim();
             pInmue1.Pagado = Convert.ToDouble(txtPrima.Text);
-            pInmue1.Pagado = Convert.ToDouble(Convert.ToDouble(txtTotal.Text) - Convert.ToDouble(txtPrima.Text));
+            pInmue1.Pendiente = Convert.ToDouble(Convert.ToDouble(txtTotal.Text) - Convert.ToDouble(txtPrima.Text));
             pInmue1.Mora = Convert.ToDouble("0");
             pInmue1.CuotasP = Convert.ToInt16(txtCuotas.Text);
             pInmue1.Fecha = dtpFechaCotrato.Value.Day + "/" + dtpFechaCotrato.Value.Month + "/" + dtpFechaCotrato.Value.Year;
@@ -217,8 +217,8 @@ namespace Conexion.Venta
             conectar.abrirconexion();
 
             Ventas pInmue = new Ventas();
-            pInmue.Id = txtIdContrato.Text.Trim();
-            pInmue.Fecha = dtpFechaCotrato.Value.Day + "/" + dtpFechaCotrato.Value.Month + "/" + dtpFechaCotrato.Value.Year;
+            pInmue.IdV = txtIdContrato.Text.Trim();
+            pInmue.FechaV = dtpFechaCotrato.Value.Day + "/" + dtpFechaCotrato.Value.Month + "/" + dtpFechaCotrato.Value.Year;
             pInmue.Observacion = txtObservacion.Text.Trim();
             pInmue.Cliente = txtIdC.Text.Trim();
             pInmue.Empleado = txtIdE.Text.Trim();
@@ -235,7 +235,7 @@ namespace Conexion.Venta
             if (resultado > 0)
             {
                 MessageBox.Show("Contrato Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Pag();
+                this.Pag();
               
             }
             else
@@ -305,6 +305,11 @@ namespace Conexion.Venta
         }
 
         private void txtNombreE_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
         {
 
         }

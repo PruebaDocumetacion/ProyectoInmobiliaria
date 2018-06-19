@@ -13,7 +13,7 @@ namespace Conexion
         {
             int retorno = 0;
             string sql1 = string.Format("INSERT INTO brproyecto.Inmueble (idProp, ciudadProp, direccionProp, descripcion," +
-                "tipoInmueble, precioProp,comisionProp,medidaCProp,banos,dormitorios,foto) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}','{10}'); ", cli.Id, cli.Ciudad,cli.Direccion,cli.Descripcion,cli.Tipo,cli.Precio,cli.Comision,cli.Medida,cli.Banos,cli.Dormitorios,cli.Foto);
+                "tipoInmueble, precioProp,comisionProp,medidaCProp,banos,dormitorios,foto) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}','{10}'); ", cli.IdI, cli.Ciudad,cli.DireccionI,cli.Descripcion,cli.Tipo,cli.Precio,cli.Comision,cli.Medida,cli.Banos,cli.Dormitorios,cli.Foto);
             MySqlCommand comando = new MySqlCommand(sql1, conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
@@ -23,7 +23,7 @@ namespace Conexion
         {
             int retorno1 = 0;
             string sql = string.Format("Update brproyecto.Inmueble set ciudadProp='{0}', direccionProp='{1}', descripcion='{2}'," +
-                "tipoInmbleue='{3}', precioProp='{4}',comisionProp='{5}',medidaCProp='{6}',banos='{7}',dormitorios='{8}',foto='{9}' where idProp='{10}';", cli.Ciudad, cli.Direccion, cli.Descripcion, cli.Tipo, cli.Precio, cli.Comision, cli.Medida, cli.Banos, cli.Dormitorios, cli.Foto, cli.Id);
+                "tipoInmbleue='{3}', precioProp='{4}',comisionProp='{5}',medidaCProp='{6}',banos='{7}',dormitorios='{8}',foto='{9}' where idProp='{10}';", cli.Ciudad, cli.DireccionI, cli.Descripcion, cli.Tipo, cli.Precio, cli.Comision, cli.Medida, cli.Banos, cli.Dormitorios, cli.Foto, cli.IdI);
             MySqlCommand comando1 = new MySqlCommand(sql, conexion);
             retorno1 = comando1.ExecuteNonQuery();
             return retorno1;
@@ -32,7 +32,7 @@ namespace Conexion
         public static int eliminarinmueble(MySqlConnection conexion, Inmuebles clien)
         {
             int retorno2 = 0;
-            string sql = string.Format("Delete from brproyecto.Inmueble where idProp='{0}'", clien.Id);
+            string sql = string.Format("Delete from brproyecto.Inmueble where idProp='{0}'", clien.IdI);
             MySqlCommand comando2 = new MySqlCommand(sql, conexion);
             retorno2 = comando2.ExecuteNonQuery();
             return retorno2;
@@ -48,9 +48,9 @@ namespace Conexion
             while (_reader.Read())
             {
                 Inmuebles pInmueble = new Inmuebles();
-                pInmueble.Id = _reader.GetString(0);
+                pInmueble.IdI = _reader.GetString(0);
                 pInmueble.Ciudad = _reader.GetString(1);
-                pInmueble.Direccion = _reader.GetString(2);
+                pInmueble.DireccionI = _reader.GetString(2);
                 pInmueble.Descripcion = _reader.GetString(3);
                 pInmueble.Tipo = _reader.GetString(4);
                 pInmueble.Precio = _reader.GetInt32(5);
@@ -76,9 +76,9 @@ namespace Conexion
             while (_reader.Read())
             {
                 Inmuebles pInmueble = new Inmuebles();
-                pInmueble.Id = _reader.GetString(0);
+                pInmueble.IdI = _reader.GetString(0);
                 pInmueble.Ciudad = _reader.GetString(1);
-                pInmueble.Direccion = _reader.GetString(2);
+                pInmueble.DireccionI = _reader.GetString(2);
                 pInmueble.Descripcion = _reader.GetString(3);
                 pInmueble.Tipo = _reader.GetString(4);
                 pInmueble.Precio = _reader.GetInt32(5);
@@ -106,9 +106,9 @@ namespace Conexion
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                pInmueble.Id = _reader.GetString(0);
+                pInmueble.IdI = _reader.GetString(0);
                 pInmueble.Ciudad = _reader.GetString(1);
-                pInmueble.Direccion = _reader.GetString(2);
+                pInmueble.DireccionI = _reader.GetString(2);
                 pInmueble.Descripcion = _reader.GetString(3);
                 pInmueble.Tipo = _reader.GetString(4);
                 pInmueble.Precio = _reader.GetInt32(5);

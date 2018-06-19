@@ -265,6 +265,7 @@
             this.Controls.Add(this.dgCliente);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmClienteAgregar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmClienteAgregar";
             this.Load += new System.EventHandler(this.frmClienteAgregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCliente)).EndInit();

@@ -7,10 +7,10 @@ using MySql.Data.MySqlClient;
 
 namespace Conexion
 {
-    public class Ventas
+    public class Ventas:Clientes
     {
-        public string Id { get; set; }
-        public string Fecha { get; set; }
+        public string IdV { get; set; }
+        public string FechaV { get; set; }
         public string Observacion { get; set; }
         public string Cliente { get; set; }
         public string Empleado { get; set; }
@@ -26,8 +26,8 @@ namespace Conexion
 
         public Ventas(string pId, string pFecha, string pObservacion, string pCliente, string pEmpleado, string pPropiedad, string pForma,int pCuotas, double pPrima, double pDescuento,int pTotal)
         {
-            this.Id = pId;
-            this.Fecha = pFecha;
+            this.IdV = pId;
+            this.FechaV = pFecha;
             this.Observacion = pObservacion;
             this.Cliente = pCliente;
             this.Empleado = pEmpleado;

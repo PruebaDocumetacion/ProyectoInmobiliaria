@@ -7,27 +7,27 @@ using System.Threading.Tasks;
 namespace Conexion
 {
 
-    public class Clientes
+    public class Clientes:Inmuebles
     {
 
         
-        public string Id { get; set; }
-        public string Nombre { get; set; }
+        public string IdC { get; set; }
+        public string NombreC { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
         public string Oficio { get; set; }
-        public string Direccion { get; set; }
+        public string DireccionC { get; set; }
 
         public Clientes() { }
 
         public Clientes(string pId, string pNombre,  string pTelefono, string pCorreo , string pOficio, string pDireccion)
         {
-            this.Id = pId;
-            this.Nombre = pNombre;
+            this.IdC = pId;
+            this.NombreC = pNombre;
             this.Telefono = pTelefono;
             this.Correo = pCorreo;
             this.Oficio = pOficio;
-            this.Direccion = pDireccion;
+            this.DireccionC = pDireccion;
         }
     }
 

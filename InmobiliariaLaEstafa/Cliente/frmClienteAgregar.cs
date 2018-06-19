@@ -32,12 +32,12 @@ namespace Conexion
             conectar.abrirconexion();
 
             Clientes pCliente = new Clientes();
-            pCliente.Id = txtId.Text.Trim();
-            pCliente.Nombre = txtNombre.Text.Trim();
+            pCliente.IdC = txtId.Text.Trim();
+            pCliente.NombreC = txtNombre.Text.Trim();
             pCliente.Telefono = txtTelefono.Text.Trim();
             pCliente.Correo = txtCorreo.Text.Trim();
             pCliente.Oficio = txtOficio.Text.Trim();
-            pCliente.Direccion = txtDireccion.Text.Trim();
+            pCliente.DireccionC = txtDireccion.Text.Trim();
 
             int resultado = operaClientes.agregarcliente(conectar.con, pCliente);
             if (resultado > 0)

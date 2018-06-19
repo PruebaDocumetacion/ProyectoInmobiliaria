@@ -23,13 +23,13 @@ namespace Conexion.Inmueble
             conectar.abrirconexion();
 
             Inmuebles pInmueble = new Inmuebles();
-            pInmueble.Id = txtId.Text.Trim();
+            pInmueble.IdI = txtId.Text.Trim();
             pInmueble.Ciudad = cbCiudad.Text.Trim();
-            pInmueble.Direccion = cbDireccion.Text.Trim();
+            pInmueble.DireccionI = cbDireccion.Text.Trim();
             pInmueble.Descripcion = txtDescripcion.Text.Trim();
             pInmueble.Tipo = cbTipo.Text.Trim();
-            pInmueble.Precio = Convert.ToInt32(txtPrecio.Text);
-            pInmueble.Comision =Convert.ToInt32(txtComision.Text);
+            pInmueble.Precio = Convert.ToDouble(txtPrecio.Text);
+            pInmueble.Comision =Convert.ToDouble(txtComision.Text);
             pInmueble.Medida = Convert.ToInt16(txtMedida.Text);
             pInmueble.Banos = Convert.ToInt16(dudBanos.Text);
             pInmueble.Dormitorios = Convert.ToInt16(dudDormitorios.Text);
@@ -82,6 +82,7 @@ namespace Conexion.Inmueble
             dudDormitorios.Text = "";
             dudBanos.Text = "";
             txtFoto.Clear();
+            conectar.cerrarconexion();
         }
 
         private void frmInmuebleAgregar_Load(object sender, EventArgs e)
@@ -89,15 +90,21 @@ namespace Conexion.Inmueble
             Conexion conectar = new Conexion();
             conectar.abrirconexion();
             dgAgregarInmueble.DataSource = operaInmueble.Buscar(conectar.con);
+            conectar.cerrarconexion();
         }
-
+        //Hay un problema con el calculo de la comision
         private void txtPrecio_TextChanged(object sender, EventArgs e)
         {
-            double Preci = Convert.ToDouble(txtPrecio.Text);
-            double T = 0;
-           
-            T = (Preci * 0.03);
-            txtComision.Text =Convert.ToString(T);
+            if (txtPrecio.Text == "")
+            {
+                txtPrecio.Text = "0";
+            }
+            else { 
+                double Preci = Convert.ToDouble(txtPrecio.Text);
+                double T = 0;
+                T = (Preci * 0.03);
+                txtComision.Text = Convert.ToString(T);
+            }
         }
 
         private void txtComision_TextChanged(object sender, EventArgs e)

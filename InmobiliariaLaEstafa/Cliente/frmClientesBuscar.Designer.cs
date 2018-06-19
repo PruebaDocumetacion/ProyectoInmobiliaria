@@ -179,6 +179,7 @@
             this.Controls.Add(this.dgBuscarCliente);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmClientesBuscar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmClientesBuscar";
             this.Load += new System.EventHandler(this.frmClientesBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgBuscarCliente)).EndInit();

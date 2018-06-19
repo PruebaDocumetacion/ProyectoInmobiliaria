@@ -213,6 +213,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgActualizarInmueble);
             this.Name = "frmInmuebleBuscar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInmuebleBuscar";
             this.Load += new System.EventHandler(this.frmInmuebleBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgActualizarInmueble)).EndInit();

@@ -59,7 +59,7 @@ namespace Conexion.Inmueble
             if (Inmuebleselecionado != null)
             {
                 cbCiudad.Text=Inmuebleselecionado.Ciudad;
-                cbDireccion.Text=Inmuebleselecionado.Direccion;
+                cbDireccion.Text=Inmuebleselecionado.DireccionI;
                 txtDescripcion.Text=Inmuebleselecionado.Descripcion;
                 cbTipo.Text=Inmuebleselecionado.Tipo;
                 txtPrecio.Text=Convert.ToString(Inmuebleselecionado.Precio);
@@ -82,9 +82,9 @@ namespace Conexion.Inmueble
             conectar.abrirconexion();
 
             Inmuebles pInmueble = new Inmuebles();
-            pInmueble.Id = txtId.Text.Trim();
+            pInmueble.IdI = txtId.Text.Trim();
             pInmueble.Ciudad = cbCiudad.Text.Trim();
-            pInmueble.Direccion = cbDireccion.Text.Trim();
+            pInmueble.DireccionI = cbDireccion.Text.Trim();
             pInmueble.Descripcion = txtDescripcion.Text.Trim();
             pInmueble.Tipo = cbTipo.Text.Trim();
             pInmueble.Precio = Convert.ToInt32(txtPrecio.Text);
@@ -152,7 +152,7 @@ namespace Conexion.Inmueble
             conectar.abrirconexion();
 
             Inmuebles pInmueble1 = new Inmuebles();
-            pInmueble1.Id = InmuebleActual.Id;
+            pInmueble1.IdI = InmuebleActual.IdI;
 
 
             if (MessageBox.Show("Esta Seguro que desea eliminar el Inmueble Actual", "Estas Seguro??", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

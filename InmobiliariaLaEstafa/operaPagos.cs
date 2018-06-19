@@ -20,7 +20,7 @@ namespace Conexion
         }
 
 
-        //
+        /*
         public static Clientes BuscarparametroCli(string Id, MySqlConnection con)
         {
             Clientes pCliente = new Clientes();
@@ -68,38 +68,39 @@ namespace Conexion
                
             }
             return _lista;
-        }
+        }*/
         //Sin terminar
-        public static List<Pago> BuscarContrato1(string Id,MySqlConnection con)
+        
+        public static Pago Contrato1(string Id,MySqlConnection con)
         {
-            List<Pago> _lista1 = new List<Pago>();
-            string sql = string.Format("SELECT idNumeroPago,Operacion_idOperacion,nombreCliente,direccionCliente,tipoInmueble,descripcion,Prima,saldoAcumulado,saldoPendiente,Mora Fecha FROM Saldo inner join Operacion join Clientes on Operacion_idOperacion ={0} ",Id);
+            Pago _lista1 = new Pago();
+            string sql = string.Format("select idNumeroPago,Operacion_idOperacion,nombreCliente,direccionCliente,tipoInmueble,descripcion,cuotasPendiente,Prima,saldoPagado," +
+                "saldoPendiente,Mora,fechaPago from brproyecto.operacion inner join brproyecto.saldo on(Operacion.idOperacion={0})" +
+                "inner join brproyecto.cliente on(Operacion.Cliente_idCliente = Cliente.idCliente) "+ 
+                "inner join brproyecto.inmueble on(operacion.Propiedad_idProp = inmueble.idProp);",Id);
             MySqlCommand _comando = new MySqlCommand(sql, con);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                Ventas pInmueble = new Ventas();
-                Pago pInmueble1 = new Pago();
-                Clientes clientes = new Clientes();
-                pInmueble1.Operacion= _reader.GetString(0);
-                pInmueble1.Id = _reader.GetString(1);
-                clientes.Nombre = _reader.GetString(2);
-                clientes.Direccion = _reader.GetString(3);
-                pInmueble.Fecha = _reader.GetString(1);
-                pInmueble.Observacion = _reader.GetString(2);
-                pInmueble.Cliente = _reader.GetString(3);
-                pInmueble.Empleado = _reader.GetString(4);
-                pInmueble.Propiedad = _reader.GetString(5);
-                pInmueble.Forma = _reader.GetString(6);
-                pInmueble.Cuotas = _reader.GetInt16(7);
-                pInmueble.prima = _reader.GetDouble(8);
-                pInmueble.Descuento = _reader.GetDouble(9);
-                pInmueble.Total = _reader.GetDouble(10);
-                _lista1.Add(pInmueble1);
+               
+               _lista1.Id = _reader.GetString(0);
+               _lista1.IdV = _reader.GetString(1);
+                _lista1.NombreC= _reader.GetString(2);
+                _lista1.DireccionC= _reader.GetString(3);
+                _lista1.Tipo= _reader.GetString(4);
+               _lista1.Descripcion= _reader.GetString(5);
+               _lista1.CuotasP= _reader.GetInt16(6);
+               _lista1.prima= _reader.GetDouble(7);
+               _lista1.Pagado=  _reader.GetDouble(8);
+               _lista1.Pendiente=  _reader.GetDouble(9);
+               _lista1.Mora= _reader.GetDouble(10);
+                _lista1.Fecha= _reader.GetString(11);
+
+             
             }
 
             return _lista1;
         }
-      
+     
     }
 }

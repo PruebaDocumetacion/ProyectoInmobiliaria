@@ -200,7 +200,7 @@
             this.artículosToolStripMenuItem.BackColor = System.Drawing.SystemColors.Menu;
             this.artículosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.artículosToolStripMenuItem.Name = "artículosToolStripMenuItem";
-            this.artículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.artículosToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.artículosToolStripMenuItem.Text = "Agregar Inmueble";
             this.artículosToolStripMenuItem.Click += new System.EventHandler(this.artículosToolStripMenuItem_Click);
             // 
@@ -209,7 +209,7 @@
             this.toolStripMenuItem7.BackColor = System.Drawing.SystemColors.Menu;
             this.toolStripMenuItem7.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(175, 22);
             this.toolStripMenuItem7.Text = "Actualizar";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
@@ -218,7 +218,7 @@
             this.toolStripMenuItem6.BackColor = System.Drawing.SystemColors.Menu;
             this.toolStripMenuItem6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(175, 22);
             this.toolStripMenuItem6.Text = "Buscar";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click_1);
             // 
@@ -392,6 +392,7 @@
             this.ClientSize = new System.Drawing.Size(967, 450);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inmobiliaria la Estafa";
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.toolStrip1.ResumeLayout(false);

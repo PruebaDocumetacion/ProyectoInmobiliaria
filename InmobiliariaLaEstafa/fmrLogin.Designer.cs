@@ -163,6 +163,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "fmrLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmrLogin";
             this.Load += new System.EventHandler(this.fmrLogin_Load);
             this.groupBox1.ResumeLayout(false);

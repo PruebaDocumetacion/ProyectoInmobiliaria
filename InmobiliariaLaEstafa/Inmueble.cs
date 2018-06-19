@@ -8,13 +8,13 @@ namespace Conexion
 {
     public class Inmuebles
     {
-        public string Id { get; set; }
+        public string IdI { get; set; }
         public string Ciudad { get; set; }
-        public string Direccion { get; set; }
+        public string DireccionI { get; set; }
         public string Descripcion { get; set; }
         public string Tipo { get; set; }
-        public int Precio { get; set; }
-        public int Comision { get; set; }
+        public double Precio { get; set; }
+        public double Comision { get; set; }
         public int Medida { get; set; }
         public int Banos { get; set; }
         public int Dormitorios { get; set; }
@@ -22,11 +22,11 @@ namespace Conexion
 
         public Inmuebles() { }
 
-        public Inmuebles(string pId, string pCiudad, string pDireccion, string pDescripcion, string pTipo, int pPrecio,int pComision, int pMedida, int pBanos,int pDormitorios,string pFoto)
+        public Inmuebles(string pId, string pCiudad, string pDireccion, string pDescripcion, string pTipo, double pPrecio,double pComision, int pMedida, int pBanos,int pDormitorios,string pFoto)
         {
-            this.Id = pId;
+            this.IdI = pId;
             this.Ciudad = pCiudad;
-            this.Direccion = pDireccion;
+            this.DireccionI = pDireccion;
             this.Descripcion = pDescripcion;
             this.Tipo = pTipo;
             this.Precio = pPrecio;

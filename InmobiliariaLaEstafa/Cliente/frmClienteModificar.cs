@@ -40,13 +40,13 @@ namespace Conexion.Cliente
                 string id = Convert.ToString(txtId.Text);
                 ClienteSelecionado = operaClientes.Buscarparametro1(id, conectar.con);
 
-            if (ClienteSelecionado.Id != null)
+            if (ClienteSelecionado.IdC != null)
             {
-                txtNombre.Text = ClienteSelecionado.Nombre;
+                txtNombre.Text = ClienteSelecionado.NombreC;
                 txtTelefono.Text = ClienteSelecionado.Telefono;
                 txtCorreo.Text = ClienteSelecionado.Correo;
                 txtOficio.Text = ClienteSelecionado.Oficio;
-                txtDireccion.Text = ClienteSelecionado.Direccion;
+                txtDireccion.Text = ClienteSelecionado.DireccionC;
                 ClienteActual = ClienteSelecionado;
                 txtId.Enabled = false;
                 conectar.cerrarconexion();
@@ -68,12 +68,12 @@ namespace Conexion.Cliente
             conectar.abrirconexion();
 
             Clientes pCliente = new Clientes();
-            pCliente.Id = ClienteActual.Id;
-            pCliente.Nombre = txtNombre.Text.Trim();
+            pCliente.IdC = ClienteActual.IdC;
+            pCliente.NombreC = txtNombre.Text.Trim();
             pCliente.Telefono = txtTelefono.Text.Trim();
             pCliente.Correo = txtCorreo.Text.Trim();
             pCliente.Oficio = txtOficio.Text.Trim();
-            pCliente.Direccion = txtDireccion.Text.Trim();
+            pCliente.DireccionC = txtDireccion.Text.Trim();
 
             int resultado = operaClientes.modificarcliente(conectar.con, pCliente);
             if (resultado > 0)
@@ -118,7 +118,7 @@ namespace Conexion.Cliente
             conectar.abrirconexion();
 
             Clientes pCliente1 = new Clientes();
-                pCliente1.Id = ClienteActual.Id;
+                pCliente1.IdC = ClienteActual.IdC;
 
             
             if (MessageBox.Show("Esta Seguro que desea eliminar el Cliente Actual", "Estas Seguro??", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

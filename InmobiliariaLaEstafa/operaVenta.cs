@@ -12,7 +12,7 @@ namespace Conexion
         {
             int retor = 0;
             string sql1 = string.Format("INSERT INTO brproyecto.Operacion (idOperacion, fechaOperacion, observacionOpeacion, Cliente_idCliente," +
-                "Empleado_idEmpleado, Propiedad_idProp,FormaPago,Cuota,Prima,Descuento,Total) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}'); ", clie.Id, clie.Fecha,clie.Observacion,clie.Cliente,clie.Empleado,clie.Propiedad,clie.Forma,clie.Cuotas,clie.prima,clie.Descuento,clie.Total);
+                "Empleado_idEmpleado, Propiedad_idProp,FormaPago,Cuota,Prima,Descuento,Total) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}'); ", clie.IdV, clie.FechaV,clie.Observacion,clie.Cliente,clie.Empleado,clie.Propiedad,clie.Forma,clie.Cuotas,clie.prima,clie.Descuento,clie.Total);
             MySqlCommand coman = new MySqlCommand(sql1, conexion);
             retor = coman.ExecuteNonQuery();
             return retor;
@@ -30,7 +30,7 @@ namespace Conexion
         {
             int retorno1 = 0;
             string sql = string.Format("Update brproyecto.Operacion set  fechaOperacion='{0}', observacionOpeacion='{1}', Cliente_idCliente='{2}'" +
-                "Empleado_idEmpleado='{3}', Propiedad_idProp='{4}',FormaPago='{5}',Cuota='{6}',Prima='{7}',Descuento='{8}' where idOperacion='{9}';", cli.Fecha, cli.Observacion, cli.Cliente, cli.Empleado, cli.Propiedad, cli.Forma, cli.Cuotas,cli.prima,cli.Descuento, cli.Id);
+                "Empleado_idEmpleado='{3}', Propiedad_idProp='{4}',FormaPago='{5}',Cuota='{6}',Prima='{7}',Descuento='{8}' where idOperacion='{9}';", cli.FechaV, cli.Observacion, cli.Cliente, cli.Empleado, cli.Propiedad, cli.Forma, cli.Cuotas,cli.prima,cli.Descuento, cli.IdV);
             MySqlCommand comando1 = new MySqlCommand(sql, conexion);
             retorno1 = comando1.ExecuteNonQuery();
             return retorno1;
@@ -39,7 +39,7 @@ namespace Conexion
         public static int eliminarVenta(MySqlConnection conexion, Ventas clien)
         {
             int retorno2 = 0;
-            string sql = string.Format("Delete from brproyecto.Venta where idOperacion='{0}'", clien.Id);
+            string sql = string.Format("Delete from brproyecto.Venta where idOperacion='{0}'", clien.IdV);
             MySqlCommand comando2 = new MySqlCommand(sql, conexion);
             retorno2 = comando2.ExecuteNonQuery();
             return retorno2;
@@ -53,7 +53,7 @@ namespace Conexion
             MySqlDataReader _reader1 = _comando1.ExecuteReader();
             while (_reader1.Read())
             {
-                pInmueble.Id = _reader1.GetString(0);
+                pInmueble.IdI = _reader1.GetString(0);
                 pInmueble.Descripcion = _reader1.GetString(1);
                 pInmueble.Precio = _reader1.GetInt32(2);
             }
@@ -72,9 +72,9 @@ namespace Conexion
             while (_reader.Read())
             {
                 Inmuebles pInmueble = new Inmuebles();
-                pInmueble.Id = _reader.GetString(0);
+                pInmueble.IdI = _reader.GetString(0);
                 pInmueble.Ciudad = _reader.GetString(1);
-                pInmueble.Direccion = _reader.GetString(2);
+                pInmueble.DireccionI = _reader.GetString(2);
                 pInmueble.Descripcion = _reader.GetString(3);
                 pInmueble.Tipo = _reader.GetString(4);
                 pInmueble.Precio = _reader.GetInt32(5);
@@ -119,8 +119,8 @@ namespace Conexion
             MySqlDataReader _reader3 = _comando3.ExecuteReader();
             while (_reader3.Read())
             {
-                pCliente.Id = _reader3.GetString(0);
-                pCliente.Nombre = _reader3.GetString(1);
+                pCliente.IdC = _reader3.GetString(0);
+                pCliente.NombreC = _reader3.GetString(1);
             }
 
             return pCliente;
@@ -134,8 +134,8 @@ namespace Conexion
             while (_reader.Read())
             {
                 Ventas pInmueble = new Ventas();
-                pInmueble.Id = _reader.GetString(0);
-                pInmueble.Fecha = _reader.GetString(1);
+                pInmueble.IdV = _reader.GetString(0);
+                pInmueble.FechaV = _reader.GetString(1);
                 pInmueble.Observacion = _reader.GetString(2);
                 pInmueble.Cliente = _reader.GetString(3);
                 pInmueble.Empleado = _reader.GetString(4);
@@ -160,8 +160,8 @@ namespace Conexion
             while (_reader.Read())
             {
                 Ventas pInmueble = new Ventas();
-                pInmueble.Id = _reader.GetString(0);
-                pInmueble.Fecha = _reader.GetString(1);
+                pInmueble.IdV = _reader.GetString(0);
+                pInmueble.FechaV = _reader.GetString(1);
                 pInmueble.Observacion = _reader.GetString(2);
                 pInmueble.Cliente = _reader.GetString(3);
                 pInmueble.Empleado = _reader.GetString(4);

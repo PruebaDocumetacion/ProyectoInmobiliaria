@@ -34,6 +34,8 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.dgActualizarInmueble = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbDireccion = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -56,8 +58,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.cbDireccion = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.txtFoto = new System.Windows.Forms.TextBox();
             this.cbCiudad = new System.Windows.Forms.ComboBox();
@@ -147,6 +147,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cbDireccion
+            // 
+            this.cbDireccion.FormattingEnabled = true;
+            this.cbDireccion.ItemHeight = 22;
+            this.cbDireccion.Items.AddRange(new object[] {
+            "Barrio Centro",
+            "Barrio El Carmen",
+            "Barrio Saragoza",
+            "Barrio Macarulla",
+            "Barrio San Miguel",
+            "Barrio San Antonio"});
+            this.cbDireccion.Location = new System.Drawing.Point(108, 70);
+            this.cbDireccion.Name = "cbDireccion";
+            this.cbDireccion.Size = new System.Drawing.Size(147, 30);
+            this.cbDireccion.TabIndex = 2;
+            this.cbDireccion.SelectedIndexChanged += new System.EventHandler(this.cbDireccion_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 80);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 18);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Direccion :";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label10
             // 
@@ -400,34 +428,6 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // cbDireccion
-            // 
-            this.cbDireccion.FormattingEnabled = true;
-            this.cbDireccion.ItemHeight = 22;
-            this.cbDireccion.Items.AddRange(new object[] {
-            "Barrio Centro",
-            "Barrio El Carmen",
-            "Barrio Saragoza",
-            "Barrio Macarulla",
-            "Barrio San Miguel",
-            "Barrio San Antonio"});
-            this.cbDireccion.Location = new System.Drawing.Point(108, 70);
-            this.cbDireccion.Name = "cbDireccion";
-            this.cbDireccion.Size = new System.Drawing.Size(147, 30);
-            this.cbDireccion.TabIndex = 2;
-            this.cbDireccion.SelectedIndexChanged += new System.EventHandler(this.cbDireccion_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 80);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 18);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Direccion :";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -475,6 +475,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button4);
             this.Name = "frmInmuebleActualizar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInmuebleActualizar";
             this.Load += new System.EventHandler(this.frmInmuebleActualizar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgActualizarInmueble)).EndInit();
