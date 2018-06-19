@@ -210,7 +210,40 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\ventasAgregar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\veadd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\veupdate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vesearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventasModificar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventasActualizar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga %284%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vendedor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mod %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mod.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vendedo040r.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
