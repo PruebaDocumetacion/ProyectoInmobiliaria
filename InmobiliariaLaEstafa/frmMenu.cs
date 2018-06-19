@@ -18,10 +18,6 @@ namespace Conexion
             InitializeComponent();
         }
 
-        private void proveedorestoolStripDropDownButton1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -44,11 +40,6 @@ namespace Conexion
         {
             Cliente.frmClientesBuscar frm1 = new Cliente.frmClientesBuscar();
             frm1.Show();
-        }
-
-        private void toolStripDropDownButton5_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     
 
@@ -76,11 +67,6 @@ namespace Conexion
             frm1.Show();
         }
 
-        private void toolStripMenuItem9_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
             Inmueble.frmInmuebleActualizar frm1 = new Inmueble.frmInmuebleActualizar();
@@ -91,11 +77,6 @@ namespace Conexion
         {
             Inmueble.frmInmuebleBuscar frm1 = new Inmueble.frmInmuebleBuscar();
             frm1.Show();
-        }
-
-        private void nuevoContratoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void nuevoContratoToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -137,5 +118,23 @@ namespace Conexion
             Inmueble.frmInmuebleBuscar frm = new Inmueble.frmInmuebleBuscar();
             frm.Show();
         }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void salirDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // ver forma de como cerrar todas las pantallas de una sola ves
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("hh:mm");
+            //DateTime tiempo = new DateTime();
+            //lblHora.Text =Convert.ToString( tiempo.Hour + ":" + tiempo.Minute + ":" + tiempo.Second);
+        }
     }
 }
+

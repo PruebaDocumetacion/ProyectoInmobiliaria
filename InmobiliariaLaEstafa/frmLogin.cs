@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Conexion
 {
-    public partial class fmrLogin : Form
+    public partial class frmLogin : Form
     {
-        public fmrLogin()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -32,38 +32,39 @@ namespace Conexion
             {
                 errorProvider1.SetError(txtUsuario, "El usuario ingresado no existe");
                 errorProvider1.GetError(txtUsuario);
+                txtUsuario.Focus();
             }
             else if (txtClave.Text != clave)
             {
                 errorProvider1.SetError(txtClave, "El Clave ingresado es incorrecta");
                 errorProvider1.GetError(txtClave);
+                txtClave.Focus();
             }
             else
             {
-                frmMenu frm1 = new frmMenu();
+                frmMenu menu = new frmMenu();
                 this.Hide();
-                frm1.ShowDialog();
+                menu.ShowDialog();
+                this.Show();
+                InitLogin();
             }
         }
 
         private void fmrLogin_Load(object sender, EventArgs e)
         {
-
+            InitLogin();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void InitLogin()
         {
-            this.Close();
+            txtUsuario.Text = "";
+            txtClave.Text = "";
+            txtUsuario.Focus();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            errorProvider1.Clear();
         }
     }
 }

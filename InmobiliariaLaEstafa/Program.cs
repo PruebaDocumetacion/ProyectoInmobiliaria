@@ -18,7 +18,7 @@ namespace Conexion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fmrLogin());
+            Application.Run(new frmLogin());
         }
     }
 
