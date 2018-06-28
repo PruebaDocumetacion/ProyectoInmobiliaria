@@ -7,7 +7,8 @@ using MySql.Data.MySqlClient;
 
 namespace Conexion
 {
-    class operaVenta {
+    class operaVenta
+    {
         public static int agregarVenta(MySqlConnection conexion, Ventas clie)
         {
             int retor = 0;

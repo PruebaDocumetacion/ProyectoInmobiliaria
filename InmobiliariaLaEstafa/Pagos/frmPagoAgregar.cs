@@ -35,7 +35,7 @@ namespace Conexion.Pagos
             string id2 = Convert.ToString(txtId.Text);
            
            Pagoselecionado = operaPagos.Contrato1(id2, conectar.con);
-            MessageBox.Show("mostrar id ", Pagoselecionado.Operacion);
+          //  MessageBox.Show("mostrar id ", Pagoselecionado.Operacion);
             if (Pagoselecionado != null)
             {
                 txtNumero.Text = Pagoselecionado.Id;
