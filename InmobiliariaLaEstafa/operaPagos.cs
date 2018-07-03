@@ -13,7 +13,7 @@ namespace Conexion
         public static int agregarPago(MySqlConnection conexion, Pago clie)
         {
             int retor = 0;
-            string sql1 = string.Format("INSERT INTO brproyecto.Saldo (idNumeroPago,Operacion_idOperacion,saldoPagado,saldoPendiente,Mora,cuotasPendiente,fechaPago) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}'); ", clie.Id, clie.Operacion, clie.Pagado, clie.Pendiente, clie.Mora, clie.CuotasP, clie.Fecha);
+            string sql1 = string.Format("INSERT INTO brproyecto.Saldo (idNumeroPago,Operacion_idOperacion,Numerofac,saldoPagado,saldoPendiente,Mora,cuotasPendiente,fechaPago) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}'); ", clie.Id, clie.Operacion, clie.Factura,clie.Pagado, clie.Pendiente, clie.Mora, clie.CuotasP, clie.Fecha);
             MySqlCommand coman = new MySqlCommand(sql1, conexion);
             retor = coman.ExecuteNonQuery();
             return retor;

@@ -26,7 +26,8 @@ namespace Conexion.Venta
             txtIdE.Clear();
             txtIdInmeble.Clear();
             txtIdContrato.Clear();
-            txtCuotas.Clear();
+            txtCuotas.Text="1";
+            txtCuotas.Visible = false;
             txtPrecio.Clear();
             txtNombreC.Clear();
             txtNombreE.Clear();

@@ -10,6 +10,7 @@ namespace Conexion
     {
         public string Id { get; set; }
         public string Operacion { get; set; }
+        public int Factura { get; set; }
         public double Pagado { get; set; }
         public double Pendiente { get; set; }
         public double Mora { get; set; }
@@ -19,10 +20,11 @@ namespace Conexion
 
         public Pago() { }
 
-        public Pago(string pId,string pOperacion,int pPagado,int pPendiente, int pMora,int pCuotasP,string pFecha)
+        public Pago(string pId,string pOperacion, int pFactura,double pPagado,double pPendiente, double pMora,int pCuotasP,string pFecha)
         {
             this.Id = pId;          
             this.Operacion = pOperacion;
+            this.Factura = pFactura;
             this.Pagado = pPagado;
             this.Pendiente = pPendiente;
             this.Mora = pMora;
