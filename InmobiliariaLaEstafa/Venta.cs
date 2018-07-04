@@ -24,7 +24,7 @@ namespace Conexion
 
         public Ventas() { }
 
-        public Ventas(string pId, string pFecha, string pObservacion, string pCliente, string pEmpleado, string pPropiedad, string pForma,int pCuotas, double pPrima, double pDescuento,int pTotal)
+        public Ventas(string pId, string pFecha, string pObservacion, string pCliente, string pEmpleado, string pPropiedad, string pForma,int pCuotas, double pPrima, double pDescuento,double pTotal)
         {
             this.IdV = pId;
             this.FechaV = pFecha;
