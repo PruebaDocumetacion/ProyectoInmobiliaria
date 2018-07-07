@@ -36,5 +36,19 @@ namespace Conexion.Pagos
         {
             this.Close();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Conexion conectar = new Conexion();
+            conectar.abrirconexion();
+            string id2 = Convert.ToString(Id.Text);
+            dgPago.DataSource = operaPagos.BuscarContratos(id2, conectar.con);
+            conectar.cerrarconexion();
+        }
+
+        private void dgPago_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

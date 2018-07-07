@@ -13,7 +13,8 @@ namespace Conexion
         public static int agregarPago(MySqlConnection conexion, Pago clie)
         {
             int retor = 0;
-            string sql1 = string.Format("INSERT INTO brproyecto.Saldo (idNumeroPago,Operacion_idOperacion,Numerofac,saldoPagado,saldoPendiente,Mora,cuotasPendiente,fechaPago) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}'); ", clie.Id, clie.Operacion, clie.Factura,clie.Pagado, clie.Pendiente, clie.Mora, clie.CuotasP, clie.Fecha);
+            string sql1 = string.Format("INSERT INTO brproyecto.Saldo (idNumeroPago,Operacion_idOperacion,Numerofac,saldoPagado,saldoPendiente," +
+                "Mora,cuotasPendiente,fechaPago) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}'); ", clie.Id, clie.Operacion, clie.Factura,clie.Pagado, clie.Pendiente, clie.Mora, clie.CuotasP, clie.Fecha);
             MySqlCommand coman = new MySqlCommand(sql1, conexion);
             retor = coman.ExecuteNonQuery();
             return retor;
@@ -51,24 +52,37 @@ namespace Conexion
             }
 
             return pInmueble;
-        }
-        public static Ventas BuscarContratos(string Id, MySqlConnection con)
+        }*/
+        ///
+        public static List<Pago> BuscarContratos(string Id, MySqlConnection con)
         {
-            Ventas _lista = new Ventas();
-            string sql = string.Format("SELECT idOperacion,Cuotas,Prima,Total FROM Operacion where idOperacion ='{0}' ", Id);
+            List<Pago> _lista1 = new List<Pago>();
+           // string sql = string.Format("SELECT * FROM brproyecto.Saldo where idPago ='{0}' ", Id);
+            string sql = string.Format("select Operacion_idOperacion, idNumeroPago,nombreCliente, direccionCliente, tipoInmueble, descripcion, cuotasPendiente, Prima, saldoPagado, " +
+                "saldoPendiente,Mora,fechaPago from brproyecto.operacion inner join brproyecto.saldo on(Operacion.idOperacion={0})" +
+                "inner join brproyecto.cliente on(Operacion.Cliente_idCliente = Cliente.idCliente) " +
+                "inner join brproyecto.inmueble on(operacion.Propiedad_idProp = inmueble.idProp);", Id);
             MySqlCommand _comando = new MySqlCommand(sql, con);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                Ventas pInmueble = new Ventas();
-                pInmueble.Id = _reader.GetString(0);
-                pInmueble.Cuotas = _reader.GetInt16(1);
-                pInmueble.prima = _reader.GetDouble(2);
-                pInmueble.Total = _reader.GetDouble(3);
-               
+                Pago _lista = new Pago();
+                _lista.Id = _reader.GetString(0);
+                _lista.IdV = _reader.GetString(1);
+                _lista.NombreC = _reader.GetString(2);
+                _lista.DireccionC = _reader.GetString(3);
+                _lista.Tipo = _reader.GetString(4);
+                _lista.Descripcion = _reader.GetString(5);
+                _lista.CuotasP = _reader.GetInt16(6);
+                _lista.prima = _reader.GetDouble(7);
+                _lista.Pagado = _reader.GetDouble(8);
+                _lista.Pendiente = _reader.GetDouble(9);
+                _lista.Mora = _reader.GetDouble(10);
+                _lista.Fecha = _reader.GetString(11);
+                _lista1.Add(_lista);
             }
-            return _lista;
-        }*/
+            return _lista1;
+        }
         //Sin terminar
         
         public static Pago Contrato1(string Id,MySqlConnection con)

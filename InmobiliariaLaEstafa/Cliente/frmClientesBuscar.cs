@@ -29,6 +29,7 @@ namespace Conexion.Cliente
             Conexion conectar = new Conexion();
             conectar.abrirconexion();
             dgBuscarCliente.DataSource = operaClientes.Buscarparametro(txtId.Text,txtNombre.Text, conectar.con);
+            conectar.cerrarconexion();
         }
 
         private void frmClientesBuscar_Load(object sender, EventArgs e)
@@ -36,6 +37,7 @@ namespace Conexion.Cliente
             Conexion conectar = new Conexion();
             conectar.abrirconexion();
             dgBuscarCliente.DataSource = operaClientes.Buscar(conectar.con);
+            conectar.cerrarconexion();
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)

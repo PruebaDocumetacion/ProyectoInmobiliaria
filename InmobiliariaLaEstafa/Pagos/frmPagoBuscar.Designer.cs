@@ -39,22 +39,12 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Id = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoInmueble = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dormitorios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Baños = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPago = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPago)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -67,7 +57,7 @@
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.Id);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,6 +135,7 @@
             this.button5.Text = "Buscar";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button2
             // 
@@ -167,14 +158,14 @@
             this.textBox2.Size = new System.Drawing.Size(172, 25);
             this.textBox2.TabIndex = 13;
             // 
-            // textBox1
+            // Id
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(161, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(83, 25);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.Id.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Id.Location = new System.Drawing.Point(161, 45);
+            this.Id.Name = "Id";
+            this.Id.Size = new System.Drawing.Size(83, 25);
+            this.Id.TabIndex = 12;
+            this.Id.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -196,10 +187,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Número Contrato :";
             // 
-            // dataGridView2
+            // dgPago
             // 
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dgPago.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgPago.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -207,22 +198,11 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Purple;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView2.ColumnHeadersHeight = 29;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
-            this.Column1,
-            this.Ciudad,
-            this.tipoInmueble,
-            this.Precio,
-            this.Direccion,
-            this.Dormitorios,
-            this.Column2,
-            this.Baños,
-            this.Mora});
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dataGridView2.Location = new System.Drawing.Point(26, 186);
-            this.dataGridView2.Name = "dataGridView2";
+            this.dgPago.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgPago.ColumnHeadersHeight = 29;
+            this.dgPago.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dgPago.Location = new System.Drawing.Point(26, 186);
+            this.dgPago.Name = "dgPago";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.LemonChiffon;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -230,75 +210,26 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Purple;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgPago.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView2.Size = new System.Drawing.Size(736, 202);
-            this.dataGridView2.TabIndex = 48;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Código Contrato";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "N° Pago";
-            this.Column1.Name = "Column1";
-            // 
-            // Ciudad
-            // 
-            this.Ciudad.HeaderText = "Cliente";
-            this.Ciudad.Name = "Ciudad";
-            // 
-            // tipoInmueble
-            // 
-            this.tipoInmueble.HeaderText = "Tipo Inmueble";
-            this.tipoInmueble.Name = "tipoInmueble";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Acumulado";
-            this.Precio.Name = "Precio";
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Pendiente";
-            this.Direccion.Name = "Direccion";
-            // 
-            // Dormitorios
-            // 
-            this.Dormitorios.HeaderText = "Fecha";
-            this.Dormitorios.Name = "Dormitorios";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Abono";
-            this.Column2.Name = "Column2";
-            // 
-            // Baños
-            // 
-            this.Baños.HeaderText = "Descuento";
-            this.Baños.Name = "Baños";
-            // 
-            // Mora
-            // 
-            this.Mora.HeaderText = "Mora";
-            this.Mora.Name = "Mora";
+            this.dgPago.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgPago.Size = new System.Drawing.Size(736, 202);
+            this.dgPago.TabIndex = 48;
+            this.dgPago.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPago_CellContentClick);
             // 
             // frmPagoBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 413);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgPago);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmPagoBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPagoBuscar";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPago)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,23 +239,13 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Id;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgPago;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ciudad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoInmueble;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dormitorios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Baños;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mora;
         private System.Windows.Forms.Button button3;
     }
 }

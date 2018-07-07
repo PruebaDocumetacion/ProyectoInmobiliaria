@@ -24,7 +24,14 @@ namespace Conexion.Pagos
         {
             this.Close();
         }
-
+        public void grid()
+        {
+            Conexion conectar = new Conexion();
+            conectar.abrirconexion();
+            string id2 = Convert.ToString(txtId.Text);
+            dgPago.DataSource = operaPagos.BuscarContratos(id2,conectar.con);
+            conectar.cerrarconexion();
+        }
         
         //boton  buscar
         private void button5_Click(object sender, EventArgs e)
@@ -50,9 +57,9 @@ namespace Conexion.Pagos
                 txtPendiente.Text = Convert.ToString(Pagoselecionado.Pendiente);
                 txtmora.Text = Convert.ToString(Pagoselecionado.Mora);
                 dtpFecha.Text = Convert.ToString(Pagoselecionado.Fecha);
-                
+                this.grid();
                 txtId.Enabled = false;
-                dgPago.DataSource = Pagoselecionado;
+                
             }
             else
             {
@@ -69,34 +76,36 @@ namespace Conexion.Pagos
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-
+            ///////////////
             Conexion conectar = new Conexion();
             conectar.abrirconexion();
-
-            Pago pInmue = new Pago();
-            pInmue.Id = txtNumero.Text.Trim();            
-            pInmue.Operacion = txtId.Text.Trim();
-            pInmue.Pagado = Convert.ToDouble(Convert.ToDouble(txtAcumullada.Text) + Convert.ToDouble(textAbono.Text));
-            pInmue.Pendiente = Convert.ToDouble(Convert.ToDouble(txtPendiente.Text)-Convert.ToDouble(textAbono.Text));
-            pInmue.Mora = Convert.ToDouble(txtmora.Text);
-            pInmue.CuotasP = Convert.ToInt16(textBox1.Text)-1;
-        
-            pInmue.Fecha = dtpFecha.Value.Day + "/" + dtpFecha.Value.Month + "/" + dtpFecha.Value.Year;
-           
-          
+            Pago pInmue1 = new Pago();
+            pInmue1.Id = txtNumero.Text.Trim(); ;
+            pInmue1.Operacion = txtId.Text.Trim();
+            pInmue1.Pagado = Convert.ToDouble(Convert.ToDouble(txtAcumullada.Text) + Convert.ToDouble(textAbono.Text));
+            pInmue1.Pendiente = Convert.ToDouble(Convert.ToDouble(txtPendiente.Text) - Convert.ToDouble(textAbono.Text));
+            pInmue1.Mora = Convert.ToDouble(txtmora.Text);
+            pInmue1.CuotasP = Convert.ToInt16(textBox1.Text) - 1;
+            pInmue1.Fecha = dtpFecha.Value.Day + "/" + dtpFecha.Value.Month + "/" + dtpFecha.Value.Year;
 
 
-            int resultado = operaVenta.agregarVenta(conectar.con, pInmue);
 
-            if (resultado > 0)
+            int resultado1 = operaPagos.agregarPago(conectar.con, pInmue1);
+
+
+            if (resultado1 > 0)
             {
-                MessageBox.Show("Contrato Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                          }
+                MessageBox.Show("se registrado el primer pago Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
             {
-                MessageBox.Show("No se pudo guardar el Inmueble", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se pudo registrar el pagos", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             conectar.cerrarconexion();
+
+            ///////////////
+           
+            
 
             txtId.Enabled = true;
             txtId.Clear();
