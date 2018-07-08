@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Conexion
 {
-    class operaPagos:operaVenta
+    class operaPagos
     {
         /*Agregar los pagos */
         public static int agregarPago(MySqlConnection conexion, Pago clie)
@@ -54,9 +54,9 @@ namespace Conexion
             return pInmueble;
         }*/
         ///
-        public static List<Pago> BuscarContratos(string Id, MySqlConnection con)
+        public static List<Consulta> BuscarContratos(string Id, MySqlConnection con)
         {
-            List<Pago> _lista1 = new List<Pago>();
+            List<Consulta> _lista1 = new List<Consulta>();
            // string sql = string.Format("SELECT * FROM brproyecto.Saldo where idPago ='{0}' ", Id);
             string sql = string.Format("select Operacion_idOperacion, idNumeroPago,nombreCliente, direccionCliente, tipoInmueble, descripcion, cuotasPendiente, Prima, saldoPagado, " +
                 "saldoPendiente,Mora,fechaPago from brproyecto.operacion inner join brproyecto.saldo on(Operacion.idOperacion={0})" +
@@ -66,28 +66,30 @@ namespace Conexion
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                Pago _lista = new Pago();
-                _lista.Id = _reader.GetString(0);
-                _lista.IdV = _reader.GetString(1);
-                _lista.NombreC = _reader.GetString(2);
-                _lista.DireccionC = _reader.GetString(3);
-                _lista.Tipo = _reader.GetString(4);
-                _lista.Descripcion = _reader.GetString(5);
-                _lista.CuotasP = _reader.GetInt16(6);
-                _lista.prima = _reader.GetDouble(7);
-                _lista.Pagado = _reader.GetDouble(8);
-                _lista.Pendiente = _reader.GetDouble(9);
-                _lista.Mora = _reader.GetDouble(10);
-                _lista.Fecha = _reader.GetString(11);
+                Consulta _lista = new Consulta
+                {
+                    IdPago = _reader.GetString(0),
+                    IdContrato = _reader.GetString(1),
+                    NombreCliente = _reader.GetString(2),
+                    DireccionCliente = _reader.GetString(3),
+                    TipoInmueble = _reader.GetString(4),
+                    DescripcionInmueble = _reader.GetString(5),
+                    CuotasPago = _reader.GetInt16(6),
+                    ValorCuota = _reader.GetDouble(7),
+                    CuotasPagadas = _reader.GetDouble(8),
+                    CuotasPendientes = _reader.GetDouble(9),
+                    MoraPago = _reader.GetDouble(10),
+                    FechaPago = _reader.GetString(11)
+                };
                 _lista1.Add(_lista);
             }
             return _lista1;
         }
         //Sin terminar
         
-        public static Pago Contrato1(string Id,MySqlConnection con)
+        public static Consulta Contrato1(string Id,MySqlConnection con)
         {
-            Pago _lista1 = new Pago();
+            Consulta _lista1 = new Consulta();
             string sql = string.Format("select idNumeroPago,Operacion_idOperacion,nombreCliente,direccionCliente,tipoInmueble,descripcion,cuotasPendiente,Prima,saldoPagado," +
                 "saldoPendiente,Mora,fechaPago from brproyecto.operacion inner join brproyecto.saldo on(Operacion.idOperacion={0})" +
                 "inner join brproyecto.cliente on(Operacion.Cliente_idCliente = Cliente.idCliente) "+ 
@@ -97,18 +99,18 @@ namespace Conexion
             while (_reader.Read())
             {
                
-               _lista1.Id = _reader.GetString(0);
-               _lista1.IdV = _reader.GetString(1);
-                _lista1.NombreC= _reader.GetString(2);
-                _lista1.DireccionC= _reader.GetString(3);
-                _lista1.Tipo= _reader.GetString(4);
-               _lista1.Descripcion= _reader.GetString(5);
-               _lista1.CuotasP= _reader.GetInt16(6);
-               _lista1.prima= _reader.GetDouble(7);
-               _lista1.Pagado=  _reader.GetDouble(8);
-               _lista1.Pendiente=  _reader.GetDouble(9);
-               _lista1.Mora= _reader.GetDouble(10);
-                _lista1.Fecha= _reader.GetString(11);
+               _lista1.IdPago = _reader.GetString(0);
+               _lista1.IdContrato = _reader.GetString(1);
+                _lista1.NombreCliente= _reader.GetString(2);
+                _lista1.DireccionCliente= _reader.GetString(3);
+                _lista1.TipoInmueble= _reader.GetString(4);
+               _lista1.DescripcionInmueble= _reader.GetString(5);
+               _lista1.CuotasPago= _reader.GetInt16(6);
+               _lista1.ValorCuota= _reader.GetDouble(7);
+               _lista1.CuotasPagadas =  _reader.GetDouble(8);
+               _lista1.CuotasPendientes=  _reader.GetDouble(9);
+               _lista1.MoraPago = _reader.GetDouble(10);
+                _lista1.FechaPago = _reader.GetString(11);
 
              
             }

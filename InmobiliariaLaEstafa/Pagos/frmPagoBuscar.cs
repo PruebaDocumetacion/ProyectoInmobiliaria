@@ -43,6 +43,7 @@ namespace Conexion.Pagos
             conectar.abrirconexion();
             string id2 = Convert.ToString(Id.Text);
             dgPago.DataSource = operaPagos.BuscarContratos(id2, conectar.con);
+           // dgPago.DataSourceChanged();
             conectar.cerrarconexion();
         }
 

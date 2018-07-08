@@ -32,7 +32,10 @@ namespace Conexion.Pagos
             dgPago.DataSource = operaPagos.BuscarContratos(id2,conectar.con);
             conectar.cerrarconexion();
         }
-        
+
+        public Consulta ConsultaActual { get; set; }
+        public Consulta Consultaselecionado { get; set; }
+
         //boton  buscar
         private void button5_Click(object sender, EventArgs e)
         {
@@ -41,22 +44,22 @@ namespace Conexion.Pagos
             conectar.abrirconexion();
             string id2 = Convert.ToString(txtId.Text);
            
-           Pagoselecionado = operaPagos.Contrato1(id2, conectar.con);
-          //  MessageBox.Show("mostrar id ", Pagoselecionado.Operacion);
-            if (Pagoselecionado != null)
+           Consultaselecionado = operaPagos.Contrato1(id2, conectar.con);
+          //  MessageBox.Show("mostrar id ", Consultaselecionado.Operacion);
+            if (Consultaselecionado != null)
             {
-                txtNumero.Text = Pagoselecionado.Id;
-               // txtId.Text = Pagoselecionado.Operacion;
-              txtCliente.Text = Pagoselecionado.NombreC;
-                tDireccion.Text = Pagoselecionado.DireccionC;
-                txtTipo.Text = Pagoselecionado.Tipo;
-              txtDescripcion.Text = Pagoselecionado.Descripcion;
-                textBox1.Text = Convert.ToString(Pagoselecionado.CuotasP);
-               textAbono.Text = Convert.ToString(Pagoselecionado.prima);
-                txtAcumullada.Text = Convert.ToString(Pagoselecionado.Pagado);
-                txtPendiente.Text = Convert.ToString(Pagoselecionado.Pendiente);
-                txtmora.Text = Convert.ToString(Pagoselecionado.Mora);
-                dtpFecha.Text = Convert.ToString(Pagoselecionado.Fecha);
+                txtNumero.Text = Consultaselecionado.IdPago;
+               // txtId.Text = Consultaselecionado.Operacion;
+              txtCliente.Text = Consultaselecionado.NombreCliente;
+                tDireccion.Text = Consultaselecionado.DireccionCliente;
+                txtTipo.Text = Consultaselecionado.TipoInmueble;
+              txtDescripcion.Text = Consultaselecionado.DescripcionInmueble;
+                textBox1.Text = Convert.ToString(Consultaselecionado.CuotasPago);
+               textAbono.Text = Convert.ToString(Consultaselecionado.ValorCuota);
+                txtAcumullada.Text = Convert.ToString(Consultaselecionado.CuotasPagadas);
+                txtPendiente.Text = Convert.ToString(Consultaselecionado.CuotasPendientes);
+                txtmora.Text = Convert.ToString(Consultaselecionado.MoraPago);
+                dtpFecha.Text = Convert.ToString(Consultaselecionado.FechaPago);
                 this.grid();
                 txtId.Enabled = false;
                 
@@ -149,7 +152,7 @@ namespace Conexion.Pagos
 
         private void txtNumero_TextChanged(object sender, EventArgs e)
         {
-            dgPago.DataSource = Pagoselecionado;
+            dgPago.DataSource = Consultaselecionado;
         }
     }
 }

@@ -65,6 +65,7 @@
       <DependentUpon>frmClientesBuscar.cs</DependentUpon>
     </Compile>
     <Compile Include="conexion.cs" />
+    <Compile Include="Consulta.cs" />
     <Compile Include="empleado.cs" />
     <Compile Include="Empleado\frmActualizarEmpleado.cs">
       <SubType>Form</SubType>
