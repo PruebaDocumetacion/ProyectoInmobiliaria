@@ -85,5 +85,25 @@ namespace Conexion
             return pCliente;
         }
 
+        public static List<Clientes> Buscar(MySqlConnection con)
+        {
+            List<Clientes> _lista = new List<Clientes>();
+            string sql = "SELECT * FROM brproyecto.cliente;";
+            MySqlCommand _comando = new MySqlCommand(sql, con);
+            MySqlDataReader _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                Clientes pEmpleado = new Clientes();
+                pEmpleado.IdC = _reader.GetString(0);
+                pEmpleado.NombreC = _reader.GetString(1);
+                pEmpleado.Telefono = _reader.GetString(2);
+                pEmpleado.Correo = _reader.GetString(3);
+                pEmpleado.Oficio = _reader.GetString(4);
+                pEmpleado.DireccionC = _reader.GetString(5);
+                _lista.Add(pEmpleado);
+            }
+
+            return _lista;
+        }
     }
 }
