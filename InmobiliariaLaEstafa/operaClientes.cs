@@ -9,15 +9,7 @@ namespace Conexion
 {
     class operaClientes
     {
-        public static int agregarcliente(MySqlConnection conexion, Clientes cli)
-        {
-            int retorno = 0;
-            string sql1 = string.Format("INSERT INTO brproyecto.Cliente (idCliente, nombreCliente, telefonoCliente, correoCliente," +
-                " oficioCliente, direccionCliente) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}'); ", cli.IdC, cli.NombreC, cli.Telefono, cli.Correo, cli.Oficio, cli.DireccionC);
-            MySqlCommand comando = new MySqlCommand(sql1, conexion);
-            retorno = comando.ExecuteNonQuery();
-            return retorno;
-        }
+
 
         public static int modificarcliente(MySqlConnection conexion, Clientes clien)
         {
@@ -38,26 +30,7 @@ namespace Conexion
             return retorno2;
         }
 
-        public static List<Clientes> Buscar(MySqlConnection con)
-        {
-            List<Clientes> _lista = new List<Clientes>();
-            string sql = "SELECT * FROM Cliente;"; 
-            MySqlCommand _comando = new MySqlCommand(sql, con);
-            MySqlDataReader _reader = _comando.ExecuteReader();
-            while (_reader.Read())
-            {
-                Clientes pCliente = new Clientes();
-                pCliente.IdC = _reader.GetString(0);
-                pCliente.NombreC = _reader.GetString(1);
-                pCliente.Telefono = _reader.GetString(2);
-                pCliente.Correo = _reader.GetString(3);
-                pCliente.Oficio = _reader.GetString(4);
-                pCliente.DireccionC = _reader.GetString(5);
-                _lista.Add(pCliente);
-            }
 
-            return _lista;
-        }
 
 
         public static List<Clientes> Buscarparametro(string Id, string Nombre, MySqlConnection con)
