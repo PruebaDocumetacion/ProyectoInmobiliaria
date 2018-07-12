@@ -13,7 +13,8 @@ namespace Conexion
         {
             int retorno = 0;
             string sql1 = string.Format("INSERT INTO brproyecto.Inmueble (idProp, ciudadProp, direccionProp, descripcion," +
-                "tipoInmueble, precioProp,comisionProp,medidaCProp,banos,dormitorios,foto) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}','{10}'); ", cli.IdI, cli.Ciudad,cli.DireccionI,cli.Descripcion,cli.Tipo,cli.Precio,cli.Comision,cli.Medida,cli.Banos,cli.Dormitorios,cli.Foto);
+                "tipoInmueble, precioProp,comisionProp,medidaCProp,banos,dormitorios,foto) VALUES ('{0}', '{1}', '{2}', '{3}', " +
+                "'{4}', '{5}', '{6}', '{7}', '{8}', '{9}','{10}'); ", cli.IdI, cli.Ciudad,cli.DireccionI,cli.Descripcion,cli.Tipo,cli.Precio,cli.Comision,cli.Medida,cli.Banos,cli.Dormitorios,cli.Foto);
             MySqlCommand comando = new MySqlCommand(sql1, conexion);
             retorno = comando.ExecuteNonQuery();
             return retorno;
@@ -23,7 +24,8 @@ namespace Conexion
         {
             int retorno1 = 0;
             string sql = string.Format("Update brproyecto.Inmueble set ciudadProp='{0}', direccionProp='{1}', descripcion='{2}'," +
-                "tipoInmbleue='{3}', precioProp='{4}',comisionProp='{5}',medidaCProp='{6}',banos='{7}',dormitorios='{8}',foto='{9}' where idProp='{10}';", cli.Ciudad, cli.DireccionI, cli.Descripcion, cli.Tipo, cli.Precio, cli.Comision, cli.Medida, cli.Banos, cli.Dormitorios, cli.Foto, cli.IdI);
+                "tipoInmbleue='{3}', precioProp='{4}',comisionProp='{5}',medidaCProp='{6}',banos='{7}'," +
+                "dormitorios='{8}',foto='{9}' where idProp='{10}';", cli.Ciudad, cli.DireccionI, cli.Descripcion, cli.Tipo, cli.Precio, cli.Comision, cli.Medida, cli.Banos, cli.Dormitorios, cli.Foto, cli.IdI);
             MySqlCommand comando1 = new MySqlCommand(sql, conexion);
             retorno1 = comando1.ExecuteNonQuery();
             return retorno1;

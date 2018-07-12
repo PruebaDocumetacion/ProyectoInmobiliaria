@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Conexion
 {
-    public class Pago:Ventas
+    public class Pago
     {
-        public string Id { get; set; }
+       // public string Id { get; set; }
         public string Operacion { get; set; }
         public int Factura { get; set; }
         public double Pagado { get; set; }
@@ -20,9 +20,9 @@ namespace Conexion
 
         public Pago() { }
 
-        public Pago(string pId,string pOperacion, int pFactura,double pPagado,double pPendiente, double pMora,int pCuotasP,string pFecha)
+        public Pago(string pOperacion, int pFactura,double pPagado,double pPendiente, double pMora,int pCuotasP,string pFecha)
         {
-            this.Id = pId;          
+           // this.Id = pId;          
             this.Operacion = pOperacion;
             this.Factura = pFactura;
             this.Pagado = pPagado;

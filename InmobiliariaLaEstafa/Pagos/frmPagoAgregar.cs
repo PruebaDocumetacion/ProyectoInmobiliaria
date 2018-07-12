@@ -48,9 +48,10 @@ namespace Conexion.Pagos
           //  MessageBox.Show("mostrar id ", Consultaselecionado.Operacion);
             if (Consultaselecionado != null)
             {
-                txtNumero.Text = Consultaselecionado.IdPago;
-               // txtId.Text = Consultaselecionado.Operacion;
-              txtCliente.Text = Consultaselecionado.NombreCliente;
+
+                // txtId.Text = Consultaselecionado.Operacion;
+                txtNumero.Text = Convert.ToString(Consultaselecionado.numeroFac);
+                txtCliente.Text = Consultaselecionado.NombreCliente;
                 tDireccion.Text = Consultaselecionado.DireccionCliente;
                 txtTipo.Text = Consultaselecionado.TipoInmueble;
               txtDescripcion.Text = Consultaselecionado.DescripcionInmueble;
@@ -83,7 +84,7 @@ namespace Conexion.Pagos
             Conexion conectar = new Conexion();
             conectar.abrirconexion();
             Pago pInmue1 = new Pago();
-            pInmue1.Id = txtNumero.Text.Trim(); ;
+            pInmue1.Factura = Convert.ToInt16(txtNumero.Text)+1;
             pInmue1.Operacion = txtId.Text.Trim();
             pInmue1.Pagado = Convert.ToDouble(Convert.ToDouble(txtAcumullada.Text) + Convert.ToDouble(textAbono.Text));
             pInmue1.Pendiente = Convert.ToDouble(Convert.ToDouble(txtPendiente.Text) - Convert.ToDouble(textAbono.Text));
@@ -92,24 +93,25 @@ namespace Conexion.Pagos
             pInmue1.Fecha = dtpFecha.Value.Day + "/" + dtpFecha.Value.Month + "/" + dtpFecha.Value.Year;
 
 
-
-            int resultado1 = operaPagos.agregarPago(conectar.con, pInmue1);
-
-
-            if (resultado1 > 0)
+            if (pInmue1.CuotasP != 0)
             {
-                MessageBox.Show("se registrado el primer pago Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int resultado1 = operaPagos.agregarPago(conectar.con, pInmue1);
+
+
+                if (resultado1 > 0)
+                {
+                    MessageBox.Show("se registrado el pago Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo registrar el pagos", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                conectar.cerrarconexion();
             }
             else
             {
-                MessageBox.Show("No se pudo registrar el pagos", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El Cliente ha terminado su Deuda", "Pago Completo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            conectar.cerrarconexion();
-
-            ///////////////
-           
-            
-
             txtId.Enabled = true;
             txtId.Clear();
             txtNumero.Clear();

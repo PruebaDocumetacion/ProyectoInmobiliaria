@@ -181,9 +181,9 @@ namespace Conexion.Venta
         {
             Conexion conectar = new Conexion();
             conectar.abrirconexion();
-            Pago pInmue1 = new Pago();
-            pInmue1.Id = "1";
+            Pago pInmue1 = new Pago();            
             pInmue1.Operacion = txtIdContrato.Text.Trim();
+            pInmue1.Factura = 1;
             pInmue1.Pagado = Convert.ToDouble(txtPrima.Text);
             pInmue1.Pendiente = Convert.ToDouble(Convert.ToDouble(txtTotal.Text) - Convert.ToDouble(txtPrima.Text));
             pInmue1.Mora = Convert.ToDouble("0");
@@ -311,6 +311,11 @@ namespace Conexion.Venta
         }
 
         private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

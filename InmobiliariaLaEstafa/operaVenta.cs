@@ -13,7 +13,8 @@ namespace Conexion
         {
             int retor = 0;
             string sql1 = string.Format("INSERT INTO brproyecto.Operacion (idOperacion, fechaOperacion, observacionOpeacion, Cliente_idCliente," +
-                "Empleado_idEmpleado, Propiedad_idProp,FormaPago,Cuota,Prima,Descuento,Total) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}'); ", clie.IdV, clie.FechaV,clie.Observacion,clie.Cliente,clie.Empleado,clie.Propiedad,clie.Forma,clie.Cuotas,clie.prima,clie.Descuento,clie.Total);
+                "Empleado_idEmpleado, Propiedad_idProp,FormaPago,Cuota,Prima,Descuento,Total) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}'," +
+                "'{7}','{8}','{9}','{10}'); ", clie.IdV, clie.FechaV,clie.Observacion,clie.Cliente,clie.Empleado,clie.Propiedad,clie.Forma,clie.Cuotas,clie.prima,clie.Descuento,clie.Total);
             MySqlCommand coman = new MySqlCommand(sql1, conexion);
             retor = coman.ExecuteNonQuery();
             return retor;
