@@ -38,7 +38,7 @@ namespace Conexion.Empleado
             int resultado = operaEmpleados.modificarempleado(conectar.con, pEmpleado);
             if (resultado > 0)
             {
-                MessageBox.Show("Cliente Actualizado Con Exito!!", "Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Empleado Actualizado Con Exito!!", "Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

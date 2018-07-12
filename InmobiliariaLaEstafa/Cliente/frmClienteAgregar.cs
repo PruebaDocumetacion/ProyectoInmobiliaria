@@ -131,7 +131,7 @@ namespace Conexion
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar))
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar)||char.IsSeparator(e.KeyChar))
             {
                 e.Handled = false;
             }
@@ -143,7 +143,7 @@ namespace Conexion
 
         private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar))
+            if (char.IsLetter(e.KeyChar)|| char.IsControl(e.KeyChar)|| char.IsPunctuation(e.KeyChar))
             {
                 e.Handled = false;
             }
@@ -153,5 +153,22 @@ namespace Conexion
             }
         }
 
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
+        }
     }
 }
