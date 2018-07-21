@@ -69,7 +69,7 @@ namespace Conexion
                 {
                     IdContrato = _reader.GetString(0),
                     numeroFac = _reader.GetInt16(1),
-                NombreCliente = _reader.GetString(2),
+                    NombreCliente = _reader.GetString(2),
                     DireccionCliente = _reader.GetString(3),
                     TipoInmueble = _reader.GetString(4),
                     DescripcionInmueble = _reader.GetString(5),

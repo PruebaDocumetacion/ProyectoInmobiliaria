@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Conexion
 {
+    // establecer conexion con la base de datos
     public class Conexion
     {
         private string servidor = "127.0.0.1";

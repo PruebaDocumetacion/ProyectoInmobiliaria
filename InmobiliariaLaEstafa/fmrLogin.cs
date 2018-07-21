@@ -18,15 +18,16 @@ namespace Conexion
         }
 
         private void button1_Click(object sender, EventArgs e)
+
         {
             //Eliminar las siguientes dos lineas para validar el login
             //--¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
-            txtUsuario.Text = "Edgardo";
+           txtUsuario.Text = "Edgardo";
           txtClave.Text = "1234";
 
             string usuario = "Edgardo";
             string clave = "1234";
-
+            // valida si el usuario y contraseña estan en lo correcto
 
             if (txtUsuario.Text != usuario)
             {
@@ -40,6 +41,7 @@ namespace Conexion
             }
             else
             {
+                //llama al formulario del menú
                 frmMenu frm1 = new frmMenu();
                 this.Hide();
                 frm1.ShowDialog();

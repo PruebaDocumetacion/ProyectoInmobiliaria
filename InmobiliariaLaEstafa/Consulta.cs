@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Conexion
 {
+
+    //Sirve para encapsular los datos que al consultar los pagos de  un contrato en especfico se muestran 
     public class Consulta
     {
+        //Variables segun los datos a mostrar
         //public string IdPago { get; set; }
         public string IdContrato { get; set; }  
         public int numeroFac { get; set; }
@@ -21,7 +24,7 @@ namespace Conexion
         public double CuotasPendientes { get; set; }
         public double MoraPago { get; set; }
         public string FechaPago { get; set; }
-
+        //constructor
         public Consulta() { }
 
         public Consulta(string pIdcontrato,int pnumeroFac, string pnombrec,string pdireccionc,string ptipoi,string pdescripcioni,int pcuotas ,double pvalorcuota, double pcuotapagado, double pcuotaspendiente, double pMora, string pFecha)
