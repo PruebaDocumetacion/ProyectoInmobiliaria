@@ -10,6 +10,7 @@ namespace Conexion
     class operaEmpleados
     {
 
+        // lo que hace esta clase es la agregar modificacion, eliminacion y busqueda de datos que se llaman en los modulos respectivos
         public static int agregarempleado(MySqlConnection conexion, Empleados cli)
         {
             int retorno = 0;

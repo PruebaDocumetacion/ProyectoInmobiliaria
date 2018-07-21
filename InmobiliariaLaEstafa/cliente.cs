@@ -7,8 +7,9 @@ using MySql.Data.MySqlClient;
 
 namespace Conexion
 {
+    //Clase clientes
 
-    public class Clientes:Inmuebles
+    public class Clientes
     {
         Conexion conexion;
         
@@ -31,6 +32,7 @@ namespace Conexion
             this.DireccionC = pDireccion;
         }
 
+        // es el unico modulo en el que se insertan y se muestran datos desde la clase de encapsulamiento 
         public void Agregar()
         {
             

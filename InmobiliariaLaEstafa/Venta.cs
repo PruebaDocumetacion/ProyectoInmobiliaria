@@ -7,7 +7,8 @@ using MySql.Data.MySqlClient;
 
 namespace Conexion
 {
-    public class Ventas:Clientes
+    //ventas lleva el control de los contratos
+    public class Ventas
     {
         public string IdV { get; set; }
         public string FechaV { get; set; }

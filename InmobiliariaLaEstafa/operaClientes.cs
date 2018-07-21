@@ -10,7 +10,7 @@ namespace Conexion
     class operaClientes
     {
 
-
+        // lo que hace esta clase es la modificacion, eliminacion y busqueda de datos que se llaman en los modulos respectivos
         public static int modificarcliente(MySqlConnection conexion, Clientes clien)
         {
             int retorno1 = 0;

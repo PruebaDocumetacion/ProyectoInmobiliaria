@@ -19,40 +19,7 @@ namespace Conexion
             return retor;
         }
 
-
-        /*
-        public static Clientes BuscarparametroCli(string Id, MySqlConnection con)
-        {
-            Clientes pCliente = new Clientes();
-            string sql = string.Format("SELECT IdCliente, nombreCliente,direccionCliente FROM Cliente  where idCliente ='{0}'  ", Id);
-            MySqlCommand _comando3 = new MySqlCommand(sql, con);
-            MySqlDataReader _reader3 = _comando3.ExecuteReader();
-            while (_reader3.Read())
-            {
-                pCliente.Id = _reader3.GetString(0);
-                pCliente.Nombre = _reader3.GetString(1);
-                pCliente.Direccion = _reader3.GetString(2);
-            }
-
-            return pCliente;
-        }
-        public static Inmuebles Buscarinm(string Id, MySqlConnection con)
-        {
-            Inmuebles pInmueble = new Inmuebles();
-            string sql = string.Format("SELECT idProp,descripcion,tipoInmueble FROM Inmueble where idProp ='{0}' ", Id);
-            MySqlCommand _comando1 = new MySqlCommand(sql, con);
-            MySqlDataReader _reader1 = _comando1.ExecuteReader();
-            while (_reader1.Read())
-            {
-                pInmueble.Id = _reader1.GetString(0);
-                pInmueble.Descripcion = _reader1.GetString(1);
-                pInmueble.Tipo = _reader1.GetString(2);
-              
-            }
-
-            return pInmueble;
-        }*/
-        ///
+        //se buscan los datos de un clientes uniendolos con contrato, y el inmueble que esta pagando
         public static List<Consulta> BuscarContratos(string Id, MySqlConnection con)
         {
             List<Consulta> _lista1 = new List<Consulta>();
@@ -84,7 +51,7 @@ namespace Conexion
             }
             return _lista1;
         }
-        //Sin terminar
+        //Terminado
         
         public static Consulta Contrato1(string Id,MySqlConnection con)
         {

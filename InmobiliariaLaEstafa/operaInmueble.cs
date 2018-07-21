@@ -9,6 +9,7 @@ namespace Conexion
 {
     class operaInmueble
     {
+        // lo que hace esta clase es agregar modificacion, eliminacion y busqueda de datos que se llaman en los modulos respectivos
         public static int agregarinmueble(MySqlConnection conexion, Inmuebles cli)
         {
             int retorno = 0;

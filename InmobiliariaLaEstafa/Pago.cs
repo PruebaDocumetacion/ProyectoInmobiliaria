@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Conexion
 {
+    //lleva control de cada pago en un determinado contrato!!
     public class Pago
     {
        // public string Id { get; set; }

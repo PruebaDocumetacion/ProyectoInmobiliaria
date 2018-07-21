@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Conexion
 {
+    //Clase empleados con sus campos respectivos    
     public class Empleados
     {
         public string Id { get; set; }
