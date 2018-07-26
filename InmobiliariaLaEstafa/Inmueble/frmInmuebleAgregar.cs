@@ -60,6 +60,66 @@ namespace Conexion.Inmueble
             
         }
 
+        private bool ValidarCamposVacios()
+        {
+            bool valido = false;
+            if (txtId.Text.Length != 15)
+            {
+                MessageBox.Show("El Codigo de Inmueble esta incompleto");
+            }
+            else
+            {
+                if (cbCiudad.Text.Trim() == "")
+                {
+                    MessageBox.Show("ingrese La ciudad");
+                }
+                else
+                {
+                    if (cbDireccion.Text.Trim() == "")
+                    {
+                        MessageBox.Show("Ingrese el barrio");
+                    }
+                    else
+                    {
+                        if (cbTipo.Text.Trim() == "")
+                        {
+                            MessageBox.Show("Ingrese el tipo de Inmueble");
+                        }
+                        else
+                        {
+                            if (txtMedida.Text.Trim() == "" || txtMedida.Text.Length >= 5)
+                            {
+                                MessageBox.Show("Ingrese la medida completa que no sea mayor a 10000");
+                            }
+                            else
+                            {
+                                if (dudBanos.Text.Trim() == "" )
+                                {
+                                    MessageBox.Show("Ingrese la cantidad de0");
+                                }
+                                else
+                                {
+                                    if (txtPrecio.Text.Trim() == "")
+                                    {
+                                        MessageBox.Show("Ingrese el precio del inmueble");
+                                    }
+                                    else
+                                    {
+                                        valido = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            return valido;
+
+        }
+
+
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();

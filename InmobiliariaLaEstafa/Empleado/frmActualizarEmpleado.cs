@@ -139,6 +139,11 @@ namespace Conexion.Empleado
             conectar.abrirconexion();
             dgActualizarEmpleado.DataSource = operaEmpleados.Buscar(conectar.con);
         }
+
+        private void txtId_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
  }
 
