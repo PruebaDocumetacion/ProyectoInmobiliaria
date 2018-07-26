@@ -78,7 +78,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(223, 269);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(83, 33);
-            this.btnActualizar.TabIndex = 3;
+            this.btnActualizar.TabIndex = 12;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -192,7 +192,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(215, 206);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(568, 25);
-            this.txtDescripcion.TabIndex = 9;
+            this.txtDescripcion.TabIndex = 11;
             this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // btnBuscar
@@ -264,7 +264,7 @@
             this.dudDormitorios.Location = new System.Drawing.Point(377, 158);
             this.dudDormitorios.Name = "dudDormitorios";
             this.dudDormitorios.Size = new System.Drawing.Size(135, 29);
-            this.dudDormitorios.TabIndex = 12;
+            this.dudDormitorios.TabIndex = 9;
             // 
             // dudBanos
             // 
@@ -276,7 +276,7 @@
             this.dudBanos.Location = new System.Drawing.Point(611, 155);
             this.dudBanos.Name = "dudBanos";
             this.dudBanos.Size = new System.Drawing.Size(172, 29);
-            this.dudBanos.TabIndex = 13;
+            this.dudBanos.TabIndex = 10;
             // 
             // label9
             // 
@@ -315,7 +315,7 @@
             this.txtComision.Location = new System.Drawing.Point(364, 116);
             this.txtComision.Name = "txtComision";
             this.txtComision.Size = new System.Drawing.Size(148, 25);
-            this.txtComision.TabIndex = 11;
+            this.txtComision.TabIndex = 8;
             // 
             // label5
             // 
@@ -333,7 +333,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(78, 114);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(176, 25);
-            this.txtPrecio.TabIndex = 8;
+            this.txtPrecio.TabIndex = 4;
             this.txtPrecio.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label3
@@ -354,7 +354,7 @@
             this.cbTipo.Location = new System.Drawing.Point(137, 161);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(117, 30);
-            this.cbTipo.TabIndex = 20;
+            this.cbTipo.TabIndex = 5;
             this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
             // 
             // label7
@@ -374,7 +374,7 @@
             this.txtMedida.Location = new System.Drawing.Point(410, 70);
             this.txtMedida.Name = "txtMedida";
             this.txtMedida.Size = new System.Drawing.Size(100, 25);
-            this.txtMedida.TabIndex = 10;
+            this.txtMedida.TabIndex = 6;
             this.txtMedida.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtId
@@ -404,7 +404,7 @@
             this.button4.Location = new System.Drawing.Point(571, 269);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(83, 33);
-            this.button4.TabIndex = 6;
+            this.button4.TabIndex = 15;
             this.button4.Text = "Cancelar";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
@@ -422,7 +422,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(334, 269);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(102, 33);
-            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.TabIndex = 13;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -435,7 +435,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(462, 268);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(83, 33);
-            this.btnLimpiar.TabIndex = 5;
+            this.btnLimpiar.TabIndex = 14;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -476,7 +476,7 @@
             this.Controls.Add(this.button4);
             this.Name = "frmInmuebleActualizar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmInmuebleActualizar";
+            this.Text = "Actualizar Inmueble";
             this.Load += new System.EventHandler(this.frmInmuebleActualizar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgActualizarInmueble)).EndInit();
             this.groupBox1.ResumeLayout(false);

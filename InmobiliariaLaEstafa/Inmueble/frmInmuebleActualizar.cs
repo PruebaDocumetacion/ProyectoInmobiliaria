@@ -78,51 +78,120 @@ namespace Conexion.Inmueble
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Conexion conectar = new Conexion();
-            conectar.abrirconexion();
-
-            Inmuebles pInmueble = new Inmuebles();
-            pInmueble.IdI = txtId.Text.Trim();
-            pInmueble.Ciudad = cbCiudad.Text.Trim();
-            pInmueble.DireccionI = cbDireccion.Text.Trim();
-            pInmueble.Descripcion = txtDescripcion.Text.Trim();
-            pInmueble.Tipo = cbTipo.Text.Trim();
-            pInmueble.Precio = Convert.ToInt32(txtPrecio.Text);
-            pInmueble.Comision = Convert.ToInt32(txtComision.Text);
-            pInmueble.Medida = Convert.ToInt16(txtMedida.Text);
-            pInmueble.Banos = Convert.ToInt16(dudBanos.Text);
-            pInmueble.Dormitorios = Convert.ToInt16(dudDormitorios.Text);
-            pInmueble.Foto = txtFoto.Text.Trim();
-
-            int resultado = operaInmueble.modificarinmueble(conectar.con, pInmueble);
-            if (resultado > 0)
+            if (ValidarCamposVacios())
             {
-                MessageBox.Show("Inmueble Actualizado Con Exito!!", "Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Conexion conectar = new Conexion();
+                conectar.abrirconexion();
+
+                Inmuebles pInmueble = new Inmuebles();
+                pInmueble.IdI = txtId.Text.Trim();
+                pInmueble.Ciudad = cbCiudad.Text.Trim();
+                pInmueble.DireccionI = cbDireccion.Text.Trim();
+                pInmueble.Descripcion = txtDescripcion.Text.Trim();
+                pInmueble.Tipo = cbTipo.Text.Trim();
+                pInmueble.Precio = Convert.ToInt32(txtPrecio.Text);
+                pInmueble.Comision = Convert.ToInt32(txtComision.Text);
+                pInmueble.Medida = Convert.ToInt16(txtMedida.Text);
+                pInmueble.Banos = Convert.ToInt16(dudBanos.Text);
+                pInmueble.Dormitorios = Convert.ToInt16(dudDormitorios.Text);
+                pInmueble.Foto = txtFoto.Text.Trim();
+
+                int resultado = operaInmueble.modificarinmueble(conectar.con, pInmueble);
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Inmueble Actualizado Con Exito!!", "Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo actualizar el Inmueble", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                conectar.cerrarconexion();
+
+                txtId.Clear();
+                txtComision.Clear();
+                txtPrecio.Clear();
+                txtMedida.Clear();
+                txtDescripcion.Clear();
+                cbDireccion.Text = "";
+                cbCiudad.Text = "";
+                cbTipo.Text = "";
+                dudDormitorios.Text = "";
+                dudBanos.Text = "";
+                txtFoto.Clear();
+                pInmueble.Foto = txtFoto.Text.Trim();
+                btnActualizar.Enabled = false;
+                btnEliminar.Enabled = false;
+
+                dgActualizarInmueble.DataSource = operaInmueble.Buscar(conectar.con);
+            }
+            txtId.Enabled = true;
+
+        }
+        private bool ValidarCamposVacios()
+        {
+            bool valido = false;
+            if (txtId.Text.Length != 5)
+            {
+                MessageBox.Show("El Codigo de Inmueble esta incompleto");
             }
             else
             {
-                MessageBox.Show("No se pudo actualizar el Inmueble", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (cbCiudad.Text.Trim() == "")
+                {
+                    MessageBox.Show("ingrese La ciudad");
+                }
+                else
+                {
+                    if (cbDireccion.Text.Trim() == "")
+                    {
+                        MessageBox.Show("Ingrese el barrio");
+                    }
+                    else
+                    {
+                        if (cbTipo.Text.Trim() == "")
+                        {
+                            MessageBox.Show("Ingrese el tipo de Inmueble");
+                        }
+                        else
+                        {
+                            if (txtMedida.Text.Trim() == "" || txtMedida.Text.Length >= 5)
+                            {
+                                MessageBox.Show("Ingrese la medida completa que no sea mayor a 10000");
+                            }
+                            else
+                            {
+                                if (dudBanos.Text.Trim() == "")
+                                {
+                                    MessageBox.Show("Ingrese la cantidad de baños");
+                                }
+                                else
+                                {
+                                    if (dudDormitorios.Text.Trim() == "")
+                                    {
+                                        MessageBox.Show("Ingrese la cantidad de dormitorios");
+                                    }
+                                    else
+                                    {
+                                        if (txtPrecio.Text.Trim() == "")
+                                        {
+                                            MessageBox.Show("Ingrese el precio del inmueble");
+                                        }
+                                        else
+                                        {
+                                            valido = true;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
-            conectar.cerrarconexion();
 
-            txtId.Clear();
-            txtComision.Clear();
-            txtPrecio.Clear();
-            txtMedida.Clear();
-            txtDescripcion.Clear();
-            cbDireccion.Text = "";
-            cbCiudad.Text = "";
-            cbTipo.Text = "";
-            dudDormitorios.Text = "";
-            dudBanos.Text = "";
-            txtFoto.Clear();
-            pInmueble.Foto = txtFoto.Text.Trim();
-            btnActualizar.Enabled = false;
-            btnEliminar.Enabled = false;
-            dgActualizarInmueble.DataSource = operaInmueble.Buscar(conectar.con);
-            txtId.Enabled = true;
+
+            return valido;
+
         }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Conexion conectar = new Conexion();

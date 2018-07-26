@@ -211,6 +211,7 @@
             this.dudDormitorios.Size = new System.Drawing.Size(120, 29);
             this.dudDormitorios.TabIndex = 11;
             this.dudDormitorios.Tag = "1,2,3,4,5,6,7,8";
+            this.dudDormitorios.SelectedItemChanged += new System.EventHandler(this.dudDormitorios_SelectedItemChanged);
             // 
             // dudBanos
             // 
@@ -229,6 +230,7 @@
             this.dudBanos.Size = new System.Drawing.Size(172, 29);
             this.dudBanos.TabIndex = 9;
             this.dudBanos.Tag = "1,2,3,4,5,6,7,8";
+            this.dudBanos.SelectedItemChanged += new System.EventHandler(this.dudBanos_SelectedItemChanged);
             // 
             // label9
             // 
