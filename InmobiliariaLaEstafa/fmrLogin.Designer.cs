@@ -53,7 +53,7 @@
             this.button2.Location = new System.Drawing.Point(203, 261);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(83, 33);
-            this.button2.TabIndex = 13;
+            this.button2.TabIndex = 4;
             this.button2.Text = "Cancelar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             this.button1.Location = new System.Drawing.Point(65, 261);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 33);
-            this.button1.TabIndex = 12;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Iniciar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
@@ -97,7 +97,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(127, 26);
-            this.txtClave.TabIndex = 9;
+            this.txtClave.TabIndex = 2;
             // 
             // label2
             // 
@@ -115,7 +115,7 @@
             this.txtUsuario.MaximumSize = new System.Drawing.Size(130, 30);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(127, 26);
-            this.txtUsuario.TabIndex = 6;
+            this.txtUsuario.TabIndex = 1;
             this.txtUsuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
@@ -164,7 +164,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "fmrLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fmrLogin";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.fmrLogin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

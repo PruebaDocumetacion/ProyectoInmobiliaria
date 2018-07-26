@@ -69,11 +69,12 @@ namespace Conexion.Inmueble
                 dudDormitorios.Text= Convert.ToString(Inmuebleselecionado.Dormitorios);
                 txtFoto.Text = Inmuebleselecionado.Foto;
                 InmuebleActual = Inmuebleselecionado;
+                txtId.Enabled = false;
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
             }
-            txtId.Enabled = false;
+
             conectar.cerrarconexion();
-            btnActualizar.Enabled = true;
-            btnEliminar.Enabled = true;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -105,7 +106,7 @@ namespace Conexion.Inmueble
                 {
                     MessageBox.Show("No se pudo actualizar el Inmueble", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                conectar.cerrarconexion();
+
 
                 txtId.Clear();
                 txtComision.Clear();
@@ -123,6 +124,7 @@ namespace Conexion.Inmueble
                 btnEliminar.Enabled = false;
 
                 dgActualizarInmueble.DataSource = operaInmueble.Buscar(conectar.con);
+                conectar.cerrarconexion();
             }
             txtId.Enabled = true;
 
@@ -130,7 +132,7 @@ namespace Conexion.Inmueble
         private bool ValidarCamposVacios()
         {
             bool valido = false;
-            if (txtId.Text.Length != 5)
+            if (txtId.Text.Length != 6)
             {
                 MessageBox.Show("El Codigo de Inmueble esta incompleto");
             }

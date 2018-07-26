@@ -25,7 +25,7 @@ namespace Conexion
         {
             int retorno1 = 0;
             string sql = string.Format("Update brproyecto.Inmueble set ciudadProp='{0}', direccionProp='{1}', descripcion='{2}'," +
-                "tipoInmbleue='{3}', precioProp='{4}',comisionProp='{5}',medidaCProp='{6}',banos='{7}'," +
+                "tipoInmueble='{3}', precioProp='{4}',comisionProp='{5}',medidaCProp='{6}',banos='{7}'," +
                 "dormitorios='{8}',foto='{9}' where idProp='{10}';", cli.Ciudad, cli.DireccionI, cli.Descripcion, cli.Tipo, cli.Precio, cli.Comision, cli.Medida, cli.Banos, cli.Dormitorios, cli.Foto, cli.IdI);
             MySqlCommand comando1 = new MySqlCommand(sql, conexion);
             retorno1 = comando1.ExecuteNonQuery();
@@ -69,11 +69,11 @@ namespace Conexion
         }
 
 
-        public static List<Inmuebles> Buscarparametro(string Id, string Direccion, string Tipo,MySqlConnection con)
+        public static List<Inmuebles> Buscarparametro(string Id, string Direccion, string Tipo ,MySqlConnection con)
         {
             List<Inmuebles> _lista = new List<Inmuebles>();
             string sql = string.Format("SELECT idProp, ciudadProp, direccionProp, descripcion," +
-                "tipoInmueble, precioProp,comisionProp,medidaCProp,banos,dormitorios,foto FROM Inmueble where idProp ='{0}' or direccionProp ='{1}' or tipoInmueble ", Id, Direccion,Tipo);
+                "tipoInmueble, precioProp,comisionProp,medidaCProp,banos,dormitorios,foto FROM Inmueble where idProp ='{0}' or direccionProp ='{1}' or tipoInmueble ='{2}' ", Id, Direccion,Tipo);
             MySqlCommand _comando = new MySqlCommand(sql, con);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())

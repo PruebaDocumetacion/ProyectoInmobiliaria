@@ -154,5 +154,20 @@ namespace Conexion.Cliente
         {
             dgModificarCliente.DataSource = null;
         }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            dgModificarCliente.DataSource = null;
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

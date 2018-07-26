@@ -52,5 +52,10 @@ namespace Conexion.Inmueble
             conectar.abrirconexion();
             dgActualizarInmueble.DataSource = operaInmueble.Buscar(conectar.con);
         }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            dgActualizarInmueble.DataSource = null;
+        }
     }
 }

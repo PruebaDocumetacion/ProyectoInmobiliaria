@@ -66,7 +66,7 @@ namespace Conexion.Inmueble
         private bool ValidarCamposVacios()
         {
             bool valido = false;
-            if (txtId.Text.Length != 5)
+            if (txtId.Text.Length != 6)
             {
                 MessageBox.Show("El Codigo de Inmueble esta incompleto");
             }

@@ -39,9 +39,7 @@
             this.txtOficio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +48,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgModificarCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -86,15 +86,15 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtTelefono);
+            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtOficio);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtCorreo);
-            this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -109,7 +109,8 @@
             this.groupBox1.Size = new System.Drawing.Size(587, 249);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos";
+            this.groupBox1.Text = "Datos Clientes";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnLimpiar
             // 
@@ -118,7 +119,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(436, 165);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(83, 33);
-            this.btnLimpiar.TabIndex = 9;
+            this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -129,8 +130,8 @@
             this.txtDireccion.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Location = new System.Drawing.Point(182, 213);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(225, 25);
-            this.txtDireccion.TabIndex = 5;
+            this.txtDireccion.Size = new System.Drawing.Size(227, 25);
+            this.txtDireccion.TabIndex = 7;
             // 
             // label6
             // 
@@ -148,7 +149,7 @@
             this.txtOficio.Location = new System.Drawing.Point(182, 177);
             this.txtOficio.Name = "txtOficio";
             this.txtOficio.Size = new System.Drawing.Size(227, 25);
-            this.txtOficio.TabIndex = 4;
+            this.txtOficio.TabIndex = 6;
             // 
             // label4
             // 
@@ -166,15 +167,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(182, 139);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(227, 25);
-            this.txtCorreo.TabIndex = 3;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(182, 99);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(227, 25);
-            this.txtTelefono.TabIndex = 2;
+            this.txtCorreo.TabIndex = 5;
             // 
             // txtNombre
             // 
@@ -182,16 +175,7 @@
             this.txtNombre.Location = new System.Drawing.Point(182, 63);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(227, 25);
-            this.txtNombre.TabIndex = 1;
-            // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(182, 25);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(227, 25);
-            this.txtId.TabIndex = 0;
-            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
+            this.txtNombre.TabIndex = 3;
             // 
             // label5
             // 
@@ -245,7 +229,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(436, 123);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(83, 33);
-            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -262,7 +246,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(436, 28);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(83, 33);
-            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -280,7 +264,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(436, 73);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(83, 33);
-            this.btnActualizar.TabIndex = 7;
+            this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -293,11 +277,31 @@
             this.button2.Location = new System.Drawing.Point(436, 205);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(83, 33);
-            this.button2.TabIndex = 10;
+            this.button2.TabIndex = 11;
             this.button2.Text = "Cancelar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtId
+            // 
+            this.txtId.AccessibleDescription = "";
+            this.txtId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(182, 20);
+            this.txtId.Mask = "9999-9999-99999";
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(227, 26);
+            this.txtId.TabIndex = 1;
+            this.txtId.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(180, 98);
+            this.txtTelefono.Mask = "9999-9999";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(227, 26);
+            this.txtTelefono.TabIndex = 4;
             // 
             // frmClienteModificar
             // 
@@ -308,7 +312,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmClienteModificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmClienteModificar";
+            this.Text = "Modificar Clientes";
             this.Load += new System.EventHandler(this.frmClienteModificar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgModificarCliente)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -330,13 +334,13 @@
         private System.Windows.Forms.TextBox txtOficio;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.MaskedTextBox txtId;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
     }
 }

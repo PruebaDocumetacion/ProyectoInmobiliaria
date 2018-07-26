@@ -37,9 +37,9 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgBuscarCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -76,11 +76,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,7 +89,7 @@
             this.groupBox1.Size = new System.Drawing.Size(539, 215);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos";
+            this.groupBox1.Text = "Datos Clientes";
             // 
             // btnLimpiar
             // 
@@ -142,15 +142,6 @@
             this.txtNombre.Size = new System.Drawing.Size(147, 25);
             this.txtNombre.TabIndex = 13;
             // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(214, 51);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(147, 25);
-            this.txtId.TabIndex = 12;
-            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -171,6 +162,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Identidad:";
             // 
+            // txtId
+            // 
+            this.txtId.AccessibleDescription = "";
+            this.txtId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(214, 47);
+            this.txtId.Mask = "9999-9999-99999";
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(147, 26);
+            this.txtId.TabIndex = 25;
+            this.txtId.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
             // frmClientesBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,7 +182,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmClientesBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmClientesBuscar";
+            this.Text = "Buscar Clientes";
             this.Load += new System.EventHandler(this.frmClientesBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgBuscarCliente)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -196,9 +198,9 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.MaskedTextBox txtId;
     }
 }

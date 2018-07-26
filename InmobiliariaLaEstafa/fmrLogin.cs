@@ -22,11 +22,11 @@ namespace Conexion
         {
             //Eliminar las siguientes dos lineas para validar el login
             //--¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
-           txtUsuario.Text = "Edgardo";
-          txtClave.Text = "1234";
+           txtUsuario.Text = "InmoAdmin";
+           txtClave.Text = "LaEstafa";
 
-            string usuario = "Edgardo";
-            string clave = "1234";
+            string usuario = "InmoAdmin";
+            string clave = "LaEstafa";
             // valida si el usuario y contraseña estan en lo correcto
 
             if (txtUsuario.Text != usuario)

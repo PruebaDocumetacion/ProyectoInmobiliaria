@@ -53,5 +53,10 @@ namespace Conexion.Cliente
             conectar.abrirconexion();
             dgBuscarCliente.DataSource = operaClientes.Buscar(conectar.con);
         }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            dgBuscarCliente.DataSource = null;
+        }
     }
 }
