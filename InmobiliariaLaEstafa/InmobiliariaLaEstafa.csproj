@@ -103,6 +103,7 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Inmueble.cs" />
     <Compile Include="Inmueble\frmInmuebleActualizar.cs">
       <SubType>Form</SubType>
@@ -146,6 +147,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Servidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servidor.Designer.cs">
+      <DependentUpon>Servidor.cs</DependentUpon>
     </Compile>
     <Compile Include="Venta.cs" />
     <Compile Include="Venta\frmVentasAgregar.cs">
@@ -208,6 +215,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Servidor.resx">
+      <DependentUpon>Servidor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venta\frmVentasAgregar.resx">
       <DependentUpon>frmVentasAgregar.cs</DependentUpon>
