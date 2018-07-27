@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgActualizarEmpleado = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.txtId = new System.Windows.Forms.MaskedTextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -46,8 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
-            this.txtId = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgActualizarEmpleado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,28 +56,28 @@
             // 
             this.dgActualizarEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgActualizarEmpleado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgActualizarEmpleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgActualizarEmpleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgActualizarEmpleado.ColumnHeadersHeight = 21;
             this.dgActualizarEmpleado.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgActualizarEmpleado.Location = new System.Drawing.Point(9, 234);
             this.dgActualizarEmpleado.Name = "dgActualizarEmpleado";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgActualizarEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Silver;
-            this.dgActualizarEmpleado.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgActualizarEmpleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
+            this.dgActualizarEmpleado.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgActualizarEmpleado.Size = new System.Drawing.Size(610, 124);
             this.dgActualizarEmpleado.TabIndex = 9;
             // 
@@ -106,6 +106,26 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(135, 69);
+            this.txtTelefono.Mask = "9999-9999";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(167, 26);
+            this.txtTelefono.TabIndex = 4;
+            // 
+            // txtId
+            // 
+            this.txtId.AccessibleDescription = "";
+            this.txtId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(120, 24);
+            this.txtId.Mask = "9999-9999-99999";
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(167, 26);
+            this.txtId.TabIndex = 1;
+            this.txtId.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtId_MaskInputRejected);
             // 
             // btnLimpiar
             // 
@@ -260,26 +280,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Código:";
             // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(135, 69);
-            this.txtTelefono.Mask = "9999-9999";
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(167, 26);
-            this.txtTelefono.TabIndex = 4;
-            // 
-            // txtId
-            // 
-            this.txtId.AccessibleDescription = "";
-            this.txtId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(120, 24);
-            this.txtId.Mask = "9999-9999-99999";
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(167, 26);
-            this.txtId.TabIndex = 1;
-            this.txtId.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtId_MaskInputRejected);
-            // 
             // frmActualizarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,7 +289,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmActualizarEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmActualizarEmpleado";
+            this.Text = "Actualizar Empleado";
             this.Load += new System.EventHandler(this.frmActualizarEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgActualizarEmpleado)).EndInit();
             this.groupBox1.ResumeLayout(false);

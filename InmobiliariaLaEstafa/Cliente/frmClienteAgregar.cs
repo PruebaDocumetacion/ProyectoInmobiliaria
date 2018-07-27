@@ -77,6 +77,7 @@ namespace Conexion
         private void frmClienteAgregar_Load(object sender, EventArgs e)
         {
             CargarDGVClientes();
+            txtId.Focus();
         }
 
 

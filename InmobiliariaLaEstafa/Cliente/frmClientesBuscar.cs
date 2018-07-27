@@ -38,6 +38,7 @@ namespace Conexion.Cliente
             conectar.abrirconexion();
             dgBuscarCliente.DataSource = operaClientes.Buscar(conectar.con);
             conectar.cerrarconexion();
+            txtId.Focus();
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)

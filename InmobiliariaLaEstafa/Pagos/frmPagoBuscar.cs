@@ -51,5 +51,25 @@ namespace Conexion.Pagos
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Id_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            dgPago.DataSource = null;
+        }
+
+        private void frmPagoBuscar_Load(object sender, EventArgs e)
+        {
+            Id.Focus();
+        }
     }
 }

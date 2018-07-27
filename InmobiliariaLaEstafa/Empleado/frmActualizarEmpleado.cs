@@ -99,14 +99,14 @@ namespace Conexion.Empleado
             pEmpleado1.Id = EmpleadoActual.Id;
 
 
-            if (MessageBox.Show("Esta Seguro que desea eliminar el Cliente Actual", "Estas Seguro??", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Esta Seguro que desea eliminar el  Empleado Actual", "Estas Seguro??", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 txtId.Enabled = true;
 
                 int resultado3 = operaEmpleados.eliminarempleado(conectar.con, pEmpleado1);
                 if (resultado3 > 0)
                 {
-                    MessageBox.Show("Cliente Eliminado Correctamente!", "Cliente Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(" Empleado Eliminado Correctamente!", " Empleado Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -138,6 +138,8 @@ namespace Conexion.Empleado
             Conexion conectar = new Conexion();
             conectar.abrirconexion();
             dgActualizarEmpleado.DataSource = operaEmpleados.Buscar(conectar.con);
+            conectar.cerrarconexion();
+            txtId.Focus();
         }
 
         private void txtId_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

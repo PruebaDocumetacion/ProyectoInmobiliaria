@@ -211,59 +211,134 @@ namespace Conexion.Venta
             this.Calculo();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private bool ValidarCamposVacios()
         {
-
-            Conexion conectar = new Conexion();
-            conectar.abrirconexion();
-
-            Ventas pInmue = new Ventas();
-            pInmue.IdV = txtIdContrato.Text.Trim();
-            pInmue.FechaV = dtpFechaCotrato.Value.Day + "/" + dtpFechaCotrato.Value.Month + "/" + dtpFechaCotrato.Value.Year;
-            pInmue.Observacion = txtObservacion.Text.Trim();
-            pInmue.Cliente = txtIdC.Text.Trim();
-            pInmue.Empleado = txtIdE.Text.Trim();
-            pInmue.Propiedad =txtIdInmeble.Text.Trim();
-            pInmue.Forma = cbForma.Text.Trim();
-            pInmue.Cuotas = Convert.ToInt16(txtCuotas.Text);
-            pInmue.prima = Convert.ToDouble(txtPrima.Text);
-            pInmue.Descuento = Convert.ToDouble(txtDescuento.Text);
-            pInmue.Total = Convert.ToDouble(txtTotal.Text);
-            
-
-            int resultado = operaVenta.agregarVenta(conectar.con, pInmue);
-           
-            if (resultado > 0)
+            bool valido = false;
+            if (txtIdC.Text.Length != 15)
             {
-                MessageBox.Show("Contrato Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Pag();
-              
+                MessageBox.Show("La identidad del cliente esta incompleta");
             }
             else
             {
-                MessageBox.Show("No se pudo guardar el Inmueble", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            conectar.cerrarconexion();
-          
+                if (txtNombreC.Text.Trim() == "")
+                {
+                    MessageBox.Show("ingrese el nombre del cliente");
+                }
+                else
+                {
+                    if (txtIdE.Text.Length != 15)
+                    {
+                        MessageBox.Show("La identidad del Empleado esta incompleta");
+                    }
+                    else
+                    {
+                        if (txtNombreE.Text.Trim() == "")
+                        {
+                            MessageBox.Show("ingrese el nombre del Empleado");
+                        }
+                        else
+                        {
+                            if (txtIdInmeble.Text.Length != 6)
+                            {
+                                MessageBox.Show("El Codigo de Inmueble esta incompleto");
+                            }
+                            else
+                            {
+                                if (txtIdContrato.Text.Length != 6)
+                                {
+                                    MessageBox.Show("El Codigo del contrato esta incompleto");
+                                }
+                                else
+                                {
+                                    if (cbForma.Text.Trim() == "")
+                                    {
+                                        MessageBox.Show("Ingrese la forma de pago");
+                                    }
+                                    else
+                                    {
+                                        if (txtObservacion.Text.Trim() == "")
+                                        {
+                                            MessageBox.Show("Ingrese Una observacion sobre la venta");
+                                        }
+                                        else
+                                        {
 
-            txtIdC.Clear();
-            txtIdE.Clear();
-            txtIdInmeble.Clear();
-            txtIdContrato.Clear();
-            txtCuotas.Clear();
-            txtPrecio.Clear();
-            txtNombreC.Clear();
-            txtNombreE.Clear();
-            txtDescripcion.Clear();
-            txtObservacion.Text = "";
-            txtPrima.Text = "";
-            txtTotal.Text = "";
-            dgInmueble.Text = "";
-            dtpFechaCotrato.Text = "";
-            txtImpuesto.Clear();
-            txtImporte.Clear();
-            txtDescuento.Clear();
-            cbForma.Text = "";
+                                            if (txtPrecio.Text.Trim() == "")
+                                            {
+                                                MessageBox.Show("Ingrese el precio del inmueble");
+                                            }
+                                            else
+                                            {
+                                                valido = true;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            return valido;
+
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (ValidarCamposVacios())
+            {
+                Conexion conectar = new Conexion();
+                conectar.abrirconexion();
+
+                Ventas pInmue = new Ventas();
+                pInmue.IdV = txtIdContrato.Text.Trim();
+                pInmue.FechaV = dtpFechaCotrato.Value.Day + "/" + dtpFechaCotrato.Value.Month + "/" + dtpFechaCotrato.Value.Year;
+                pInmue.Observacion = txtObservacion.Text.Trim();
+                pInmue.Cliente = txtIdC.Text.Trim();
+                pInmue.Empleado = txtIdE.Text.Trim();
+                pInmue.Propiedad = txtIdInmeble.Text.Trim();
+                pInmue.Forma = cbForma.Text.Trim();
+                pInmue.Cuotas = Convert.ToInt16(txtCuotas.Text);
+                pInmue.prima = Convert.ToDouble(txtPrima.Text);
+                pInmue.Descuento = Convert.ToDouble(txtDescuento.Text);
+                pInmue.Total = Convert.ToDouble(txtTotal.Text);
+
+
+                int resultado = operaVenta.agregarVenta(conectar.con, pInmue);
+
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Contrato Guardado Con Exito!!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Pag();
+
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo guardar el Inmueble", "Fallo!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                conectar.cerrarconexion();
+
+
+                txtIdC.Clear();
+                txtIdE.Clear();
+                txtIdInmeble.Clear();
+                txtIdContrato.Clear();
+                txtCuotas.Clear();
+                txtPrecio.Clear();
+                txtNombreC.Clear();
+                txtNombreE.Clear();
+                txtDescripcion.Clear();
+                txtObservacion.Text = "";
+                txtPrima.Text = "";
+                txtTotal.Text = "";
+                dgInmueble.Text = "";
+                dtpFechaCotrato.Text = "";
+                txtImpuesto.Clear();
+                txtImporte.Clear();
+                txtDescuento.Clear();
+                cbForma.Text = "";
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -316,6 +391,45 @@ namespace Conexion.Venta
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtIdC.Clear();
+            txtNombreC.Clear();
+            txtNombreC.Enabled = true;
+            txtIdC.Enabled = true;
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            txtIdE.Clear();
+            txtNombreE.Clear();
+            txtNombreE.Enabled = true;
+            txtIdE.Enabled = true;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+                    }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            txtIdInmeble.Clear();
+            txtDescripcion.Clear();
+            txtIdInmeble.Enabled = true;
+            dgInmueble.DataSource = "";
+        }
+
+        private void txtIdContrato_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

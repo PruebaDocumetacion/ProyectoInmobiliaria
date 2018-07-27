@@ -23,6 +23,8 @@ namespace Conexion.Cliente
             Conexion conectar = new Conexion();
             conectar.abrirconexion();
             dgModificarCliente.DataSource = operaClientes.Buscar(conectar.con);
+            conectar.cerrarconexion();
+            txtId.Focus();
         }
 
         private void button2_Click(object sender, EventArgs e)

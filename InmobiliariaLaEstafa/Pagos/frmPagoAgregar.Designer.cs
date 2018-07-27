@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtmora = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -54,15 +56,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.btnCancela = new System.Windows.Forms.Button();
-            this.btnCobrer = new System.Windows.Forms.Button();
             this.dgPago = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPago)).BeginInit();
@@ -71,6 +70,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.dtpFecha);
@@ -95,7 +95,6 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtNumero);
-            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 21);
@@ -104,6 +103,24 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(720, 191);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(63, 25);
+            this.textBox1.TabIndex = 47;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(569, 195);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(150, 18);
+            this.label11.TabIndex = 46;
+            this.label11.Text = "Cuotas pendientes :";
             // 
             // dtpFecha
             // 
@@ -160,7 +177,7 @@
             // txtCliente
             // 
             this.txtCliente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.Location = new System.Drawing.Point(105, 67);
+            this.txtCliente.Location = new System.Drawing.Point(91, 71);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(155, 25);
             this.txtCliente.TabIndex = 37;
@@ -313,14 +330,6 @@
             this.txtNumero.TabIndex = 2;
             this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
             // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(153, 28);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(107, 25);
-            this.txtId.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -339,7 +348,7 @@
             this.btnGenerar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnGenerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnGenerar.Location = new System.Drawing.Point(290, 277);
+            this.btnGenerar.Location = new System.Drawing.Point(133, 277);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(125, 47);
             this.btnGenerar.TabIndex = 41;
@@ -352,7 +361,7 @@
             // 
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(581, 277);
+            this.button8.Location = new System.Drawing.Point(584, 277);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(71, 47);
             this.button8.TabIndex = 40;
@@ -365,7 +374,7 @@
             // 
             this.btnCancela.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancela.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancela.Location = new System.Drawing.Point(441, 277);
+            this.btnCancela.Location = new System.Drawing.Point(360, 277);
             this.btnCancela.Name = "btnCancela";
             this.btnCancela.Size = new System.Drawing.Size(116, 47);
             this.btnCancela.TabIndex = 39;
@@ -373,22 +382,6 @@
             this.btnCancela.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancela.UseVisualStyleBackColor = true;
             this.btnCancela.Click += new System.EventHandler(this.btnCancela_Click);
-            // 
-            // btnCobrer
-            // 
-            this.btnCobrer.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
-            this.btnCobrer.FlatAppearance.BorderSize = 4;
-            this.btnCobrer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
-            this.btnCobrer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.btnCobrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrer.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnCobrer.Location = new System.Drawing.Point(183, 277);
-            this.btnCobrer.Name = "btnCobrer";
-            this.btnCobrer.Size = new System.Drawing.Size(83, 47);
-            this.btnCobrer.TabIndex = 38;
-            this.btnCobrer.Text = "Cobrar ";
-            this.btnCobrer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCobrer.UseVisualStyleBackColor = true;
             // 
             // dgPago
             // 
@@ -419,23 +412,15 @@
             this.dgPago.Size = new System.Drawing.Size(796, 113);
             this.dgPago.TabIndex = 42;
             // 
-            // textBox1
+            // txtId
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(720, 191);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(63, 25);
-            this.textBox1.TabIndex = 47;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(569, 195);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(150, 18);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "Cuotas pendientes :";
+            this.txtId.AccessibleDescription = "";
+            this.txtId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(148, 29);
+            this.txtId.Mask = "a-9999";
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(112, 26);
+            this.txtId.TabIndex = 48;
             // 
             // frmPagoAgregar
             // 
@@ -446,7 +431,6 @@
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.btnCancela);
-            this.Controls.Add(this.btnCobrer);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmPagoAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -477,7 +461,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtmora;
@@ -490,9 +473,9 @@
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btnCancela;
-        private System.Windows.Forms.Button btnCobrer;
         private System.Windows.Forms.DataGridView dgPago;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.MaskedTextBox txtId;
     }
 }

@@ -63,25 +63,25 @@ namespace Conexion.Empleado
             bool valido = false;
             if (txtId.Text.Length != 15)
             {
-                MessageBox.Show("La identidad del cliente esta incompleta");
+                MessageBox.Show("La identidad del Empleado esta incompleta");
             }
             else
             {
                 if (txtNombre.Text.Trim() == "")
                 {
-                    MessageBox.Show("ingrese el nombre del cliente");
+                    MessageBox.Show("ingrese el nombre del Empleado");
                 }
                 else
                 {
                     if (txtTelefono.Text.Trim() == "")
                     {
-                        MessageBox.Show("Ingrese el telefono del cliente");
+                        MessageBox.Show("Ingrese el telefono del Empleado");
                     }
                     else
                     {
                             if (txtDireccion.Text.Trim() == "")
                             {
-                                MessageBox.Show("Ingrese la direccion del cliente");
+                                MessageBox.Show("Ingrese la direccion del Empleado");
                             }
                             else
                             {
@@ -112,6 +112,8 @@ namespace Conexion.Empleado
             Conexion conectar = new Conexion();
             conectar.abrirconexion();
             dgEmpleado.DataSource = operaEmpleados.Buscar(conectar.con);
+            conectar.cerrarconexion();
+            txtId.Focus();
         }
 
         private void txtId_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

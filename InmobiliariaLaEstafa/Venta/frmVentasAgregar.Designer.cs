@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgInmueble = new System.Windows.Forms.DataGridView();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtIdInmeble = new System.Windows.Forms.TextBox();
             this.btnBuscarInmueble = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -51,26 +50,22 @@
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.cbForma = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtIdContrato = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpFechaCotrato = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtNombreC = new System.Windows.Forms.TextBox();
-            this.txtIdC = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtNombreE = new System.Windows.Forms.TextBox();
-            this.txtIdE = new System.Windows.Forms.TextBox();
             this.btnBuscarEmpleado = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -79,6 +74,13 @@
             this.txtImporte = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
+            this.txtIdC = new System.Windows.Forms.MaskedTextBox();
+            this.txtIdE = new System.Windows.Forms.MaskedTextBox();
+            this.txtIdInmeble = new System.Windows.Forms.MaskedTextBox();
+            this.txtIdContrato = new System.Windows.Forms.MaskedTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInmueble)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -90,10 +92,11 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.txtIdInmeble);
             this.groupBox3.Controls.Add(this.dgInmueble);
             this.groupBox3.Controls.Add(this.txtDescripcion);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.txtIdInmeble);
             this.groupBox3.Controls.Add(this.btnBuscarInmueble);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,28 +111,28 @@
             // 
             this.dgInmueble.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgInmueble.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgInmueble.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgInmueble.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgInmueble.ColumnHeadersHeight = 29;
             this.dgInmueble.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgInmueble.Location = new System.Drawing.Point(19, 78);
             this.dgInmueble.Name = "dgInmueble";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgInmueble.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
-            this.dgInmueble.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgInmueble.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Silver;
+            this.dgInmueble.RowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgInmueble.Size = new System.Drawing.Size(890, 98);
             this.dgInmueble.TabIndex = 18;
             // 
@@ -151,14 +154,6 @@
             this.label11.TabIndex = 16;
             this.label11.Text = "Descripción:";
             // 
-            // txtIdInmeble
-            // 
-            this.txtIdInmeble.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdInmeble.Location = new System.Drawing.Point(71, 31);
-            this.txtIdInmeble.Name = "txtIdInmeble";
-            this.txtIdInmeble.Size = new System.Drawing.Size(190, 25);
-            this.txtIdInmeble.TabIndex = 7;
-            // 
             // btnBuscarInmueble
             // 
             this.btnBuscarInmueble.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
@@ -167,10 +162,10 @@
             this.btnBuscarInmueble.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnBuscarInmueble.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarInmueble.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnBuscarInmueble.Location = new System.Drawing.Point(267, 27);
+            this.btnBuscarInmueble.Location = new System.Drawing.Point(192, 28);
             this.btnBuscarInmueble.Name = "btnBuscarInmueble";
             this.btnBuscarInmueble.Size = new System.Drawing.Size(83, 33);
-            this.btnBuscarInmueble.TabIndex = 8;
+            this.btnBuscarInmueble.TabIndex = 9;
             this.btnBuscarInmueble.Text = "Buscar";
             this.btnBuscarInmueble.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarInmueble.UseVisualStyleBackColor = true;
@@ -189,6 +184,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.txtIdContrato);
             this.groupBox2.Controls.Add(this.txtDescuento);
             this.groupBox2.Controls.Add(this.lbDescuento);
             this.groupBox2.Controls.Add(this.txtCuotas);
@@ -201,7 +197,6 @@
             this.groupBox2.Controls.Add(this.txtObservacion);
             this.groupBox2.Controls.Add(this.cbForma);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtIdContrato);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dtpFechaCotrato);
             this.groupBox2.Controls.Add(this.label10);
@@ -239,7 +234,7 @@
             this.txtCuotas.Location = new System.Drawing.Point(409, 65);
             this.txtCuotas.Name = "txtCuotas";
             this.txtCuotas.Size = new System.Drawing.Size(148, 25);
-            this.txtCuotas.TabIndex = 12;
+            this.txtCuotas.TabIndex = 14;
             this.txtCuotas.TextChanged += new System.EventHandler(this.txtCuotas_TextChanged);
             // 
             // label12
@@ -312,13 +307,14 @@
             // cbForma
             // 
             this.cbForma.FormattingEnabled = true;
+            this.cbForma.ItemHeight = 22;
             this.cbForma.Items.AddRange(new object[] {
             "Credito",
             "Contado"});
             this.cbForma.Location = new System.Drawing.Point(169, 95);
             this.cbForma.Name = "cbForma";
             this.cbForma.Size = new System.Drawing.Size(147, 30);
-            this.cbForma.TabIndex = 11;
+            this.cbForma.TabIndex = 13;
             this.cbForma.SelectedIndexChanged += new System.EventHandler(this.cbForma_SelectedIndexChanged);
             // 
             // label9
@@ -330,14 +326,6 @@
             this.label9.Size = new System.Drawing.Size(118, 18);
             this.label9.TabIndex = 19;
             this.label9.Text = "Forma de Pago:";
-            // 
-            // txtIdContrato
-            // 
-            this.txtIdContrato.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdContrato.Location = new System.Drawing.Point(150, 35);
-            this.txtIdContrato.Name = "txtIdContrato";
-            this.txtIdContrato.Size = new System.Drawing.Size(159, 25);
-            this.txtIdContrato.TabIndex = 9;
             // 
             // label5
             // 
@@ -357,7 +345,7 @@
             this.dtpFechaCotrato.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpFechaCotrato.Name = "dtpFechaCotrato";
             this.dtpFechaCotrato.Size = new System.Drawing.Size(193, 22);
-            this.dtpFechaCotrato.TabIndex = 10;
+            this.dtpFechaCotrato.TabIndex = 12;
             // 
             // label10
             // 
@@ -372,9 +360,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.txtIdC);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.txtNombreC);
-            this.groupBox1.Controls.Add(this.txtIdC);
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
@@ -394,10 +383,10 @@
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(806, 18);
+            this.btnAgregar.Location = new System.Drawing.Point(824, 18);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(83, 33);
-            this.btnAgregar.TabIndex = 14;
+            this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Nuevo";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -411,14 +400,6 @@
             this.txtNombreC.Size = new System.Drawing.Size(190, 25);
             this.txtNombreC.TabIndex = 2;
             // 
-            // txtIdC
-            // 
-            this.txtIdC.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdC.Location = new System.Drawing.Point(119, 21);
-            this.txtIdC.Name = "txtIdC";
-            this.txtIdC.Size = new System.Drawing.Size(190, 25);
-            this.txtIdC.TabIndex = 1;
-            // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
@@ -427,10 +408,10 @@
             this.btnBuscarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(686, 17);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(661, 17);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(83, 33);
-            this.btnBuscarCliente.TabIndex = 3;
+            this.btnBuscarCliente.TabIndex = 2;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
@@ -459,8 +440,9 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox4.Controls.Add(this.txtNombreE);
+            this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.txtIdE);
+            this.groupBox4.Controls.Add(this.txtNombreE);
             this.groupBox4.Controls.Add(this.btnBuscarEmpleado);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.label2);
@@ -481,14 +463,6 @@
             this.txtNombreE.TabIndex = 5;
             this.txtNombreE.TextChanged += new System.EventHandler(this.txtNombreE_TextChanged);
             // 
-            // txtIdE
-            // 
-            this.txtIdE.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdE.Location = new System.Drawing.Point(119, 28);
-            this.txtIdE.Name = "txtIdE";
-            this.txtIdE.Size = new System.Drawing.Size(190, 25);
-            this.txtIdE.TabIndex = 4;
-            // 
             // btnBuscarEmpleado
             // 
             this.btnBuscarEmpleado.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
@@ -497,7 +471,7 @@
             this.btnBuscarEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnBuscarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarEmpleado.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnBuscarEmpleado.Location = new System.Drawing.Point(681, 21);
+            this.btnBuscarEmpleado.Location = new System.Drawing.Point(661, 21);
             this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
             this.btnBuscarEmpleado.Size = new System.Drawing.Size(83, 33);
             this.btnBuscarEmpleado.TabIndex = 6;
@@ -530,10 +504,10 @@
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpiar.Location = new System.Drawing.Point(456, 530);
+            this.btnLimpiar.Location = new System.Drawing.Point(379, 530);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(71, 33);
-            this.btnLimpiar.TabIndex = 34;
+            this.btnLimpiar.TabIndex = 17;
             this.btnLimpiar.Text = " Limpiar";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -546,27 +520,11 @@
             this.button7.Location = new System.Drawing.Point(547, 530);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(116, 33);
-            this.button7.TabIndex = 27;
+            this.button7.TabIndex = 18;
             this.button7.Text = "Cancelar Venta";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
-            this.button6.FlatAppearance.BorderSize = 4;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button6.Location = new System.Drawing.Point(317, 530);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(116, 33);
-            this.button6.TabIndex = 25;
-            this.button6.Text = "Eliminar Articulo";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -657,6 +615,98 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // txtIdC
+            // 
+            this.txtIdC.AccessibleDescription = "";
+            this.txtIdC.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdC.Location = new System.Drawing.Point(113, 23);
+            this.txtIdC.Mask = "9999-9999-99999";
+            this.txtIdC.Name = "txtIdC";
+            this.txtIdC.Size = new System.Drawing.Size(203, 26);
+            this.txtIdC.TabIndex = 1;
+            // 
+            // txtIdE
+            // 
+            this.txtIdE.AccessibleDescription = "";
+            this.txtIdE.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdE.Location = new System.Drawing.Point(100, 28);
+            this.txtIdE.Mask = "9999-9999-99999";
+            this.txtIdE.Name = "txtIdE";
+            this.txtIdE.Size = new System.Drawing.Size(203, 26);
+            this.txtIdE.TabIndex = 5;
+            // 
+            // txtIdInmeble
+            // 
+            this.txtIdInmeble.AccessibleDescription = "";
+            this.txtIdInmeble.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdInmeble.Location = new System.Drawing.Point(67, 31);
+            this.txtIdInmeble.Mask = "aa-999";
+            this.txtIdInmeble.Name = "txtIdInmeble";
+            this.txtIdInmeble.Size = new System.Drawing.Size(102, 26);
+            this.txtIdInmeble.TabIndex = 8;
+            // 
+            // txtIdContrato
+            // 
+            this.txtIdContrato.AccessibleDescription = "";
+            this.txtIdContrato.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdContrato.Location = new System.Drawing.Point(148, 32);
+            this.txtIdContrato.Mask = "a-9999";
+            this.txtIdContrato.Name = "txtIdContrato";
+            this.txtIdContrato.Size = new System.Drawing.Size(168, 26);
+            this.txtIdContrato.TabIndex = 11;
+            this.txtIdContrato.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtIdContrato_MaskInputRejected);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.button1.FlatAppearance.BorderSize = 4;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button1.Location = new System.Drawing.Point(754, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 33);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Limpiar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.button2.FlatAppearance.BorderSize = 4;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button2.Location = new System.Drawing.Point(754, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(55, 33);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Limpiar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.button3.FlatAppearance.BorderSize = 4;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button3.Location = new System.Drawing.Point(302, 28);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(55, 33);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Limpiar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // frmVentasAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -666,14 +716,13 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmVentasAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmVentasAgregar";
+            this.Text = "Agregar Contrato";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInmueble)).EndInit();
@@ -693,27 +742,23 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtIdInmeble;
         private System.Windows.Forms.Button btnBuscarInmueble;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbForma;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtIdContrato;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpFechaCotrato;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtNombreC;
-        private System.Windows.Forms.TextBox txtIdC;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgInmueble;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtNombreE;
-        private System.Windows.Forms.TextBox txtIdE;
         private System.Windows.Forms.Button btnBuscarEmpleado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -725,7 +770,6 @@
         private System.Windows.Forms.Label lbPrima;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label17;
@@ -738,5 +782,12 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtDescuento;
         private System.Windows.Forms.Label lbDescuento;
+        private System.Windows.Forms.MaskedTextBox txtIdC;
+        private System.Windows.Forms.MaskedTextBox txtIdE;
+        private System.Windows.Forms.MaskedTextBox txtIdInmeble;
+        private System.Windows.Forms.MaskedTextBox txtIdContrato;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

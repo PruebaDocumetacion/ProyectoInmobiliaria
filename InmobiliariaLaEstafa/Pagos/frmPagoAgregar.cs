@@ -63,12 +63,33 @@ namespace Conexion.Pagos
                 dtpFecha.Text = Convert.ToString(Consultaselecionado.FechaPago);
                 this.grid();
                 txtId.Enabled = false;
-                
+                txtCliente.Enabled = false;
+                txtDescripcion.Enabled = false;
+                txtTipo.Enabled = false;
+                txtAcumullada.Enabled = false;
+                txtmora.Enabled = false;
+                tDireccion.Enabled = false;
+                textAbono.Enabled = false;
+                txtNumero.Enabled = false;
+                txtPendiente.Enabled = false;
+                textBox1.Enabled = false;
+
             }
             else
             {
                 MessageBox.Show("Pago No Encontrado!!", "Pago", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtId.Clear();
+                txtId.Enabled = true;
+                txtCliente.Enabled = true;
+                txtDescripcion.Enabled = true;
+                txtTipo.Enabled = true;
+                txtAcumullada.Enabled = true;
+                txtmora.Enabled = true;
+                tDireccion.Enabled = true;
+                textAbono.Enabled = true;
+                txtNumero.Enabled = true;
+                txtPendiente.Enabled = true;
+                textBox1.Enabled = true;
             }
             conectar.cerrarconexion();
             //conectar.abrirconexion();
@@ -150,11 +171,32 @@ namespace Conexion.Pagos
             txtDescripcion.Clear();
             textAbono.Text = "";
             txtmora.Text = "";
+            txtId.Enabled = true;
+            txtCliente.Enabled = true;
+            txtDescripcion.Enabled = true;
+            txtTipo.Enabled = true;
+            txtAcumullada.Enabled = true;
+            txtmora.Enabled = true;
+            tDireccion.Enabled = true;
+            textAbono.Enabled = true;
+            txtNumero.Enabled = true;
+            txtPendiente.Enabled = true;
+            textBox1.Enabled = true;
         }
 
         private void txtNumero_TextChanged(object sender, EventArgs e)
         {
             dgPago.DataSource = Consultaselecionado;
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCobrer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

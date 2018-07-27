@@ -161,6 +161,7 @@ namespace Conexion.Inmueble
             conectar.abrirconexion();
             dgAgregarInmueble.DataSource = operaInmueble.Buscar(conectar.con);
             conectar.cerrarconexion();
+            txtId.Focus();
         }
         //Hay un problema con el calculo de la comision
         private void txtPrecio_TextChanged(object sender, EventArgs e)

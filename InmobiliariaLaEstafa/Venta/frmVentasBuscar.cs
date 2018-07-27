@@ -22,6 +22,8 @@ namespace Conexion.Venta
             Conexion conectar = new Conexion();
             conectar.abrirconexion();
             dgActualizarInmueble.DataSource = operaVenta.BuscarContrato1(conectar.con);
+            conectar.cerrarconexion();
+            txtId.Focus();
         }
 
         private void cbTipo_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,10 +41,11 @@ namespace Conexion.Venta
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtId.Clear();
-           
+            txtId.Focus();
             Conexion conectar = new Conexion();
             conectar.abrirconexion();
             dgActualizarInmueble.DataSource = operaVenta.BuscarContrato1(conectar.con);
+            conectar.cerrarconexion();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -50,6 +53,11 @@ namespace Conexion.Venta
             Conexion cone = new Conexion();
             cone.cerrarconexion();
             this.Close();
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

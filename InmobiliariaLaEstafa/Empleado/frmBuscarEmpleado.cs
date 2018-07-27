@@ -34,6 +34,8 @@ namespace Conexion.Empleado
             Conexion conectar = new Conexion();
             conectar.abrirconexion();
             dgBuscarEmpleado.DataSource = operaEmpleados.Buscar(conectar.con);
+            conectar.cerrarconexion();
+            txtId.Focus();
         }
 
        
@@ -47,6 +49,11 @@ private void button1_Click(object sender, EventArgs e)
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)
+        {
+            dgBuscarEmpleado.DataSource = null;
+        }
+
+        private void txtId_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
             dgBuscarEmpleado.DataSource = null;
         }
