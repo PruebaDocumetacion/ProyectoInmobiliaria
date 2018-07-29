@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InmobiliariaLaEstafa;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace Conexion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fmrLogin());
+            Application.Run(new Servidor());
         }
     }
 
