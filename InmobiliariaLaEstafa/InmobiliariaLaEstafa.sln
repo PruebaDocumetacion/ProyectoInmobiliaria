@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaLaEstafa", "InmobiliariaLaEstafa\InmobiliariaLaEstafa.csproj", "{2E6A85E5-928E-46E2-B01C-8C93FBB95FB4}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{71B57509-0FF4-4B4F-A3AA-C2CA9D0AA2E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E6A85E5-928E-46E2-B01C-8C93FBB95FB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E6A85E5-928E-46E2-B01C-8C93FBB95FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E6A85E5-928E-46E2-B01C-8C93FBB95FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E6A85E5-928E-46E2-B01C-8C93FBB95FB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71B57509-0FF4-4B4F-A3AA-C2CA9D0AA2E2}.Debug|Any CPU.ActiveCfg = Debug
+		{71B57509-0FF4-4B4F-A3AA-C2CA9D0AA2E2}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F9130F8-3021-455D-9F5B-44CD0B950C39}
+	EndGlobalSection
+EndGlobal

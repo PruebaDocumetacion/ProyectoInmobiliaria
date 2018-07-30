@@ -10,17 +10,17 @@ namespace Conexion
     // establecer conexion con la base de datos
     public class Conexion
     {
-        private string servidor = "127.0.0.1";
+        private string servidor = Global.ip;
         private string puerto = "3306";
         private string bd = "brproyecto";
-        private string usuario = "root";
-        private string pass = "DesarrolloSoftware";
+        private string usuario = "programacion";
+        private string pass = "Mimamacocinaencasa14";
 
         public MySqlConnection con;
 
         public Conexion()
         {
-            con = new MySqlConnection(string.Format("server= {0} ; port= {1} ; database= {2} ; user= {3} ; pwd= {4}", servidor, puerto, bd, usuario, pass));
+            con = new MySqlConnection(string.Format("server= {0} ; database= {1} ; user= {2} ; pwd= {3}", servidor, bd, usuario, pass));
         }
 
         public bool abrirconexion()

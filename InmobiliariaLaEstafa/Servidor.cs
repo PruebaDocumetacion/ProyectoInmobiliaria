@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Conexion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,9 +27,8 @@ namespace InmobiliariaLaEstafa
             else
             {
                 Global.ip = textBox1.Text;
-                frmLogin s = new frmLogin();
-                
-                MessageBox.Show("Hola");
+                fmrLogin s = new fmrLogin();
+                s.Show();
                 
             }
         }
